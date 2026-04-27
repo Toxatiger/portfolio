@@ -93,6 +93,7 @@
         <div class="aurora-glow glow-primary"></div>
         <div class="aurora-glow glow-secondary"></div>
         <div class="noise-layer"></div>
+        <canvas id="ambient-canvas"></canvas>
     </div>
 
     <!-- ==========================================================================
@@ -176,35 +177,8 @@
                     <div class="pill-border"></div>
                 </div>
 
-                <!-- Theme Switcher Pill -->
-                <div class="theme-switcher-wrapper">
-                    <button class="control-pill theme-pill hover-magnetic" aria-label="Changer de thème" aria-haspopup="true" aria-expanded="false" data-cursor="UI_THEME">
-                        <div class="pill-icon"><i class="fas fa-sliders-h"></i></div>
-                        <div class="pill-content">Apparence</div>
-                        <div class="pill-border"></div>
-                    </button>
-                    
-                    <!-- Dropdown Themes -->
-                    <div class="theme-dropdown" role="menu">
-                        <div class="theme-dropdown-inner">
-                            <button class="theme-btn" data-theme-val="cyber-blue" role="menuitem">
-                                <span class="t-indicator" style="background: #38bdf8; box-shadow: 0 0 10px #38bdf8;"></span>
-                                <span class="t-name">Cyber Blue</span>
-                                <i class="fas fa-check t-active-icon"></i>
-                            </button>
-                            <button class="theme-btn" data-theme-val="amethyst" role="menuitem">
-                                <span class="t-indicator" style="background: #c084fc; box-shadow: 0 0 10px #c084fc;"></span>
-                                <span class="t-name">Amethyst</span>
-                                <i class="fas fa-check t-active-icon"></i>
-                            </button>
-                            <button class="theme-btn" data-theme-val="crimson" role="menuitem">
-                                <span class="t-indicator" style="background: #fb7185; box-shadow: 0 0 10px #fb7185;"></span>
-                                <span class="t-name">Crimson Red</span>
-                                <i class="fas fa-check t-active-icon"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <!-- Theme Button -->
+                <button type="button" class="theme-toggle-btn" id="theme-toggle">Thème</button>
 
             </div>
         </div>
@@ -1048,7 +1022,7 @@
         }
 
         /* --- THEME: AMETHYST --- */
-        html[data-theme="amethyst"] {
+        html[data-theme="amethyst"], html[data-theme="amethyste"] {
             --color-bg-base: #0a0314;
             --color-bg-glass: rgba(28, 10, 56, 0.4);
             --color-bg-glass-heavy: rgba(28, 10, 56, 0.85);
@@ -1066,6 +1040,27 @@
             --color-ps-yellow: #fde047;
             --color-danger: #f43f5e;
             --color-warning: #fbbf24;
+        }
+
+        /* --- THEME: CRIMSON ALERT --- */
+        html[data-theme="crimson"], html[data-theme="ecarlate"] {
+            --color-bg-base: #2f0a10;
+            --color-bg-glass: rgba(64, 12, 20, 0.4);
+            --color-bg-glass-heavy: rgba(64, 12, 20, 0.85);
+            --color-border-subtle: rgba(251, 113, 133, 0.15);
+            --color-border-active: rgba(251, 113, 133, 0.5);
+            --color-text-primary: #fff7f8;
+            --color-text-secondary: #f9c2cf;
+            --color-text-muted: #a85566;
+            --color-accent-main: #fb7185;
+            --color-accent-glow: rgba(251, 113, 133, 0.4);
+            --color-accent-dark: #be123c;
+            --color-aurora-1: rgba(251, 113, 133, 0.3);
+            --color-aurora-2: rgba(248, 113, 125, 0.2);
+            --color-ps-green: #fca5a5;
+            --color-ps-yellow: #fde047;
+            --color-danger: #ef4444;
+            --color-warning: #f59e0b;
         }
 
         /* --- THEME: EMERALD SEC --- */
@@ -1110,6 +1105,27 @@
             --color-warning: #f59e0b;
         }
 
+        /* --- THEME: NEON GREEN SECRET --- */
+        html[data-theme="neon-green"] {
+            --color-bg-base: #000000;
+            --color-bg-glass: rgba(0, 20, 0, 0.4);
+            --color-bg-glass-heavy: rgba(0, 20, 0, 0.85);
+            --color-border-subtle: rgba(0, 255, 0, 0.15);
+            --color-border-active: rgba(0, 255, 0, 0.5);
+            --color-text-primary: #ff7300;
+            --color-text-secondary: #cc5c00;
+            --color-text-muted: #441300;
+            --color-accent-main: #ff9100;
+            --color-accent-glow: rgba(255, 123, 0, 0.4);
+            --color-accent-dark: #884200;
+            --color-aurora-1: rgba(255, 0, 55, 0.3);
+            --color-aurora-2: rgba(255, 187, 0, 0.2);
+            --color-ps-green: #ffbb00;
+            --color-ps-yellow: #ff3300;
+            --color-danger: #ff0000;
+            --color-warning: #ffff00;
+        }
+
         /* ==========================================================================
            [02] GLOBAL RESET & BASE STYLES
            ========================================================================== */
@@ -1117,7 +1133,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            cursor: none; /* Remplacé par le curseur custom magnétique */
+            cursor: default; /* Curseur par défaut */
+        }
+
+        #cursor-tracker {
+            display: none !important;
         }
 
         html {
@@ -1296,12 +1316,40 @@
 
         .cursor-dot {
             position: absolute;
-            width: 6px; height: 6px;
-            background-color: #fff;
+            width: 42px; height: 42px;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95) 5%, rgba(240,240,240,0.35) 18%, rgba(44,51,76,0.88) 35%, rgba(14,18,30,0.98) 70%, rgba(8,10,18,1) 100%);
+            border: 1px solid rgba(255,255,255,0.25);
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            transition: width 0.2s, height 0.2s, opacity 0.2s;
-            box-shadow: 0 0 10px #fff;
+            transition: width 0.2s, height 0.2s, opacity 0.2s, transform 0.2s;
+            box-shadow: 0 0 22px rgba(255,255,255,0.24), inset 0 0 10px rgba(255,255,255,0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .cursor-dot::before {
+            content: '';
+            position: absolute;
+            width: 22px; height: 22px;
+            top: 8px; left: 8px;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.14) 40%, transparent 80%);
+            border-radius: 50%;
+            filter: blur(0.4px);
+        }
+
+        .cursor-dot::after {
+            content: '';
+            position: absolute;
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background-image:
+                radial-gradient(circle at 40% 40%, rgba(255,255,255,0.2) 0%, transparent 22%),
+                radial-gradient(circle at 70% 30%, rgba(255,255,255,0.12) 0%, transparent 20%),
+                radial-gradient(circle at 35% 70%, rgba(255,255,255,0.08) 0%, transparent 18%);
+            opacity: 0.65;
+            mix-blend-mode: screen;
         }
 
         .cursor-ring {
@@ -1315,6 +1363,7 @@
         }
 
         .crosshair-x, .crosshair-y {
+            display: none;
             position: absolute;
             background-color: transparent;
             transition: background-color var(--transition-fast);
@@ -1344,17 +1393,13 @@
             width: 60px; height: 60px;
             border-color: var(--color-accent-main);
             border-width: 2px;
-            border-radius: 8px; /* Devient un carré arrondi */
-            animation: cursor-spin 6s linear infinite;
+            border-radius: 50%;
         }
         body.cursor-locked .crosshair-x, body.cursor-locked .crosshair-y {
-            background-color: var(--color-accent-main);
-            box-shadow: 0 0 10px var(--color-accent-main);
+            display: none;
         }
         body.cursor-locked .cursor-dot { opacity: 0; }
         body.cursor-locked .cursor-label { opacity: 1; transform: translateX(0); }
-
-        @keyframes cursor-spin { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
 
         /* ==========================================================================
            [05] BOOT SEQUENCE (CINEMATIC)
@@ -1471,47 +1516,24 @@
         .pill-icon { color: var(--color-accent-main); font-size: 1rem; }
         .pill-content { font-family: var(--font-code); font-weight: 600; letter-spacing: 0.5px; }
 
-        /* Le Dropdown des Thèmes */
-        .theme-switcher-wrapper { position: relative; }
-        
-        .theme-dropdown {
-            position: absolute; top: 130%; right: 0;
-            background: var(--color-bg-glass-heavy);
-            backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+        /* Theme Toggle Button */
+        .theme-toggle-btn {
+            background: var(--color-bg-glass);
             border: 1px solid var(--color-border-subtle);
-            border-radius: 16px; padding: 0.5rem; width: 220px;
-            opacity: 0; visibility: hidden;
-            transform: translateY(-15px) scale(0.95);
-            transition: all var(--transition-medium);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-            transform-origin: top right;
+            color: var(--color-text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all var(--transition-fast);
         }
 
-        .theme-switcher-wrapper:hover .theme-dropdown {
-            opacity: 1; visibility: visible;
-            transform: translateY(0) scale(1);
-        }
-
-        .theme-dropdown-inner { display: flex; flex-direction: column; gap: 0.25rem; }
-
-        .theme-btn {
-            background: transparent; border: none; width: 100%;
-            display: flex; align-items: center; gap: 12px;
-            padding: 10px 12px; border-radius: 8px;
-            color: var(--color-text-secondary); font-family: var(--font-body); font-size: 0.9rem;
-            transition: all var(--transition-fast); text-align: left;
-        }
-
-        .theme-btn:hover, .theme-btn.active {
-            background: rgba(255, 255, 255, 0.05);
+        .theme-toggle-btn:hover {
+            background: var(--color-bg-glass-heavy);
+            border-color: var(--color-accent-main);
             color: var(--color-text-primary);
-            transform: translateX(-4px);
         }
-
-        .t-indicator { width: 12px; height: 12px; border-radius: 50%; }
-        .t-name { flex-grow: 1; }
-        .t-active-icon { font-size: 0.8rem; color: var(--color-accent-main); opacity: 0; transform: scale(0); transition: var(--transition-fast); }
-        .theme-btn.active .t-active-icon { opacity: 1; transform: scale(1); }
 
         /* ==========================================================================
            [07] HERO SECTION (TYPOGRAPHY & GLOWS)
@@ -1564,7 +1586,7 @@
         .title-job { color: var(--color-text-secondary); }
         .text-gradient {
             background: linear-gradient(to right, var(--color-text-primary), var(--color-accent-main));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
         .text-outline {
             color: transparent;
@@ -2125,13 +2147,16 @@
                     this.isLocked = false;
                     this.target = null;
 
+                    // Keep the sphere visual static in HTML
+                    this.dot.innerHTML = '';
+
                     window.addEventListener('mousemove', (e) => {
                         this.mouse.x = e.clientX;
                         this.mouse.y = e.clientY;
                         if (!this.isLocked) {
                             // Mouvement instantané pour le point, léger retard pour l'anneau (géré en CSS transition)
-                            this.dot.style.transform = `translate(${this.mouse.x}px, ${this.mouse.y}px)`;
-                            this.ring.style.transform = `translate(${this.mouse.x}px, ${this.mouse.y}px)`;
+                            this.dot.style.transform = `translate(${this.mouse.x}px, ${this.mouse.y}px) translate(-50%, -50%)`;
+                            this.ring.style.transform = `translate(${this.mouse.x}px, ${this.mouse.y}px) translate(-50%, -50%)`;
                             this.label.parentElement.style.transform = `translate(${this.mouse.x}px, ${this.mouse.y}px)`;
                         }
                     });
@@ -2141,6 +2166,14 @@
                         el.addEventListener('mouseenter', (e) => this.lock(e.currentTarget));
                         el.addEventListener('mouseleave', () => this.unlock());
                     });
+
+                    // Unlock on click or drag interaction
+                    const releaseCursor = () => {
+                        if (this.isLocked) this.unlock();
+                    };
+                    document.addEventListener('mousedown', releaseCursor);
+                    document.addEventListener('mouseup', releaseCursor);
+                    document.addEventListener('click', releaseCursor);
 
                     this.animate();
                 },
@@ -2158,8 +2191,8 @@
                     const cx = rect.left + rect.width / 2;
                     const cy = rect.top + rect.height / 2;
                     
-                    this.ring.style.transform = `translate(${cx}px, ${cy}px)`;
-                    this.dot.style.transform = `translate(${cx}px, ${cy}px)`;
+                    this.ring.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
+                    this.dot.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
                     this.label.parentElement.style.transform = `translate(${cx}px, ${cy}px)`;
                 },
 
@@ -2167,6 +2200,10 @@
                     this.isLocked = false;
                     this.target = null;
                     document.body.classList.remove('cursor-locked');
+
+                    this.dot.style.transform = `translate(${this.mouse.x}px, ${this.mouse.y}px) translate(-50%, -50%)`;
+                    this.ring.style.transform = `translate(${this.mouse.x}px, ${this.mouse.y}px) translate(-50%, -50%)`;
+                    this.label.parentElement.style.transform = `translate(${this.mouse.x}px, ${this.mouse.y}px)`;
                 },
 
                 animate() {
@@ -2175,9 +2212,16 @@
                         const rect = this.target.getBoundingClientRect();
                         const cx = rect.left + rect.width / 2;
                         const cy = rect.top + rect.height / 2;
-                        this.ring.style.transform = `translate(${cx}px, ${cy}px)`;
+                        this.ring.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
                         this.label.parentElement.style.transform = `translate(${cx}px, ${cy}px)`;
                     }
+
+                    // Randomly change bits
+                    if (Math.random() < 0.01) { // 1% chance per frame
+                        const bits = Array.from({length: 4}, () => Math.random() < 0.5 ? '0' : '1').join('');
+                        this.dot.innerHTML = bits;
+                    }
+
                     requestAnimationFrame(() => this.animate());
                 }
             },
@@ -2307,19 +2351,61 @@
                 },
 
                 initThemeSwitcher() {
-                    const btns = document.querySelectorAll('.theme-btn[data-theme-val]');
-                    btns.forEach(btn => {
-                        btn.addEventListener('click', (e) => {
-                            const theme = e.currentTarget.getAttribute('data-theme-val');
-                            document.documentElement.setAttribute('data-theme', theme);
-                            
-                            // Gérer l'état actif visuel
-                            btns.forEach(b => b.classList.remove('active'));
-                            e.currentTarget.classList.add('active');
-                            
-                            // Petite vibration pour confirmer
-                            if(navigator.vibrate) navigator.vibrate(50);
-                        });
+                    const themes = [
+                        { val: 'cyber-blue', name: 'Cyber Blue' },
+                        { val: 'amethyste', name: 'Améthyste' },
+                        { val: 'ecarlate', name: 'Écarlate' }
+                    ];
+                    const themeMap = {
+                        amethyste: 'amethyst',
+                        ecarlate: 'crimson'
+                    };
+                    const btn = document.getElementById('theme-toggle');
+                    let currentIndex = 0;
+
+                    // Set initial theme
+                    const currentTheme = document.documentElement.getAttribute('data-theme') || 'cyber-blue';
+                    themes.forEach((theme, index) => {
+                        if (theme.val === currentTheme || themeMap[theme.val] === currentTheme) {
+                            currentIndex = index;
+                            btn.textContent = theme.name;
+                        }
+                    });
+
+                    // Handle secret theme
+                    if (currentTheme === 'neon-green') {
+                        btn.textContent = 'Neon Green 🌟';
+                    }
+
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        let themeVal, themeName;
+                        const currentTheme = document.documentElement.getAttribute('data-theme');
+
+                        // 1/5 chance to trigger secret theme, unless already on secret theme
+                        if (currentTheme !== 'neon-green' && Math.random() < 0.2) {
+                            themeVal = 'neon-green';
+                            themeName = 'Neon Green 🌟';
+                        } else {
+                            // Cycle through normal themes
+                            if (currentTheme === 'neon-green') {
+                                // If coming from secret, start from cyber-blue
+                                currentIndex = 0;
+                            } else {
+                                currentIndex = (currentIndex + 1) % themes.length;
+                            }
+                            const theme = themes[currentIndex];
+                            themeVal = theme.val;
+                            themeVal = themeMap[themeVal] || themeVal;
+                            themeName = theme.name;
+                        }
+
+                        document.documentElement.setAttribute('data-theme', themeVal);
+                        btn.textContent = themeName;
+
+                        if(navigator.vibrate) navigator.vibrate(50);
                     });
                 },
 
@@ -2610,7 +2696,7 @@ Switch(config-if-range)# switchport port-security violation restrict</div>
         document.addEventListener('DOMContentLoaded', () => {
             // Instanciation de tous les sous-systèmes
             System.Boot.init();     // Lance la séquence de démarrage noire
-            System.Cursor.init();   // Lance le curseur magnétique
+            System.Cursor.init();   // Lance le curseur spécial en forme de bits
             System.Canvas.init();   // Lance le moteur de particules WebGL en arrière-plan
             System.UI.init();       // Configure les événements click, horloge, thèmes, et 3D
             System.Terminal.init(); // Prépare le PowerShell IA
