@@ -1,0 +1,3169 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio professionnel de Théo André, étudiant en BTS SIO option SISR." />
+  <title>Théo André - Portfolio BTS SIO SISR</title>
+  <style>
+    :root {
+      --ink: #15171d;
+      --soft-ink: #3f4857;
+      --muted: #697386;
+      --line: #d9e0ea;
+      --paper: #ffffff;
+      --paper-soft: #f5f7fa;
+      --charcoal: #20242c;
+      --green: #0f9f86;
+      --green-soft: #e4f7f1;
+      --blue: #2f6fd6;
+      --blue-soft: #e8f0ff;
+      --coral: #de5d5d;
+      --coral-soft: #ffeaea;
+      --gold: #d99522;
+      --gold-soft: #fff4d8;
+      --violet: #7757d6;
+      --violet-soft: #efeaff;
+      --shadow: 0 18px 48px rgba(21, 23, 29, .12);
+      --shadow-strong: 0 28px 90px rgba(21, 23, 29, .22);
+      --body-bg:
+        radial-gradient(circle at 12% 12%, rgba(15, 159, 134, .10), transparent 34rem),
+        linear-gradient(180deg, #fbfcfe 0, var(--paper-soft) 42rem, #eef4f2 100%);
+      --nav-bg: rgba(255, 255, 255, .94);
+      --surface: #ffffff;
+      --surface-soft: #fbfcfe;
+      --surface-ghost: #f7f9fc;
+      --hero-glow: rgba(15, 159, 134, .12);
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--body-bg);
+      overflow-x: hidden;
+    }
+    body[data-theme="luxury"] {
+      --green: #7c3aed;
+      --green-soft: #f1ebff;
+      --blue: #0ea5e9;
+      --coral: #f97316;
+      --gold: #f59e0b;
+      --body-bg:
+        radial-gradient(circle at 18% 8%, rgba(124, 58, 237, .14), transparent 32rem),
+        radial-gradient(circle at 80% 18%, rgba(249, 115, 22, .12), transparent 28rem),
+        linear-gradient(180deg, #fff 0, #f8fafc 52rem, #eef2ff 100%);
+    }
+    body[data-theme="lite"] {
+      --green: #0f766e;
+      --green-soft: #e6f6f2;
+      --blue: #2563eb;
+      --coral: #dc2626;
+      --gold: #b45309;
+      --body-bg:
+        linear-gradient(180deg, #ffffff 0, #f8fafc 55rem, #eef2f7 100%);
+      --hero-glow: rgba(15, 118, 110, .08);
+    }
+    body[data-theme="lite"] .panorama-track {
+      animation-duration: 60s;
+    }
+    body[data-theme="lite"] .hero,
+    body[data-theme="lite"] .stack-panorama,
+    body[data-theme="lite"] .timeline-item,
+    body[data-theme="lite"] .competence-card,
+    body[data-theme="lite"] .project-card,
+    body[data-theme="lite"] .veille-window,
+    body[data-theme="lite"] .doc-group,
+    body[data-theme="lite"] .contact-layout {
+      animation-duration: .25s;
+    }
+    body[data-theme="neon"] {
+      --ink: #fff7ed;
+      --soft-ink: #fed7aa;
+      --muted: #fdba74;
+      --line: rgba(255, 255, 255, .18);
+      --paper: rgba(24, 8, 34, .88);
+      --paper-soft: #08030f;
+      --charcoal: #12051d;
+      --green: #ff4ecd;
+      --green-soft: rgba(255, 78, 205, .15);
+      --blue: #8b5cf6;
+      --coral: #fb923c;
+      --gold: #fde047;
+      --nav-bg: rgba(18, 5, 29, .88);
+      --surface: rgba(18, 8, 32, .80);
+      --surface-soft: rgba(255, 255, 255, .07);
+      --surface-ghost: rgba(255, 255, 255, .09);
+      --body-bg:
+        radial-gradient(circle at 16% 8%, rgba(255, 78, 205, .34), transparent 28rem),
+        radial-gradient(circle at 74% 18%, rgba(251, 146, 60, .28), transparent 32rem),
+        linear-gradient(180deg, #08030f 0, #12051d 58rem, #06020b 100%);
+      color-scheme: dark;
+    }
+    body[data-theme="matrix"] {
+      --ink: #f7fee7;
+      --soft-ink: #d9f99d;
+      --muted: #bef264;
+      --line: rgba(163, 230, 53, .26);
+      --paper: rgba(2, 22, 9, .84);
+      --paper-soft: #010702;
+      --charcoal: #041207;
+      --green: #39ff14;
+      --green-soft: rgba(57, 255, 20, .14);
+      --blue: #22c55e;
+      --coral: #a3e635;
+      --gold: #bef264;
+      --nav-bg: rgba(2, 22, 9, .88);
+      --surface: rgba(2, 22, 9, .76);
+      --surface-soft: rgba(57, 255, 20, .07);
+      --surface-ghost: rgba(57, 255, 20, .10);
+      --body-bg:
+        linear-gradient(rgba(57, 255, 20, .06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57, 255, 20, .05) 1px, transparent 1px),
+        radial-gradient(circle at 18% 8%, rgba(57, 255, 20, .20), transparent 30rem),
+        linear-gradient(180deg, #010702 0, #041207 58rem, #010401 100%);
+      color-scheme: dark;
+    }
+    body[data-theme="storm"] {
+      --ink: #faf5ff;
+      --soft-ink: #e9d5ff;
+      --muted: #d8b4fe;
+      --line: rgba(233, 213, 255, .22);
+      --paper: rgba(32, 12, 70, .78);
+      --paper-soft: #09021b;
+      --charcoal: #170733;
+      --green: #a855f7;
+      --green-soft: rgba(168, 85, 247, .15);
+      --blue: #38bdf8;
+      --coral: #ec4899;
+      --gold: #f0abfc;
+      --nav-bg: rgba(23, 7, 51, .88);
+      --surface: rgba(32, 12, 70, .78);
+      --surface-soft: rgba(255, 255, 255, .07);
+      --surface-ghost: rgba(255, 255, 255, .10);
+      --body-bg:
+        radial-gradient(circle at 18% 8%, rgba(168, 85, 247, .32), transparent 28rem),
+        radial-gradient(circle at 76% 22%, rgba(56, 189, 248, .22), transparent 32rem),
+        linear-gradient(180deg, #09021b 0, #170733 60rem, #070116 100%);
+      color-scheme: dark;
+    }
+    body[data-theme="midnight"] {
+      --ink: #fff1f2;
+      --soft-ink: #fecdd3;
+      --muted: #fda4af;
+      --line: rgba(252, 165, 165, .22);
+      --paper: rgba(24, 10, 10, .82);
+      --paper-soft: #060607;
+      --charcoal: #170909;
+      --green: #ef4444;
+      --green-soft: rgba(239, 68, 68, .15);
+      --blue: #f97316;
+      --coral: #e11d48;
+      --gold: #facc15;
+      --nav-bg: rgba(24, 10, 10, .88);
+      --surface: rgba(24, 10, 10, .82);
+      --surface-soft: rgba(255, 255, 255, .07);
+      --surface-ghost: rgba(255, 255, 255, .10);
+      --body-bg:
+        radial-gradient(circle at 16% 10%, rgba(239, 68, 68, .28), transparent 28rem),
+        radial-gradient(circle at 78% 20%, rgba(249, 115, 22, .22), transparent 32rem),
+        linear-gradient(180deg, #060607 0, #170909 58rem, #050303 100%);
+      color-scheme: dark;
+    }
+    body[data-theme="night"] {
+      --ink: #e5edf7;
+      --soft-ink: #b8c6d8;
+      --muted: #8ea1b8;
+      --line: rgba(148, 163, 184, .24);
+      --paper: rgba(15, 23, 42, .84);
+      --paper-soft: #070b13;
+      --charcoal: #0f172a;
+      --green: #2dd4bf;
+      --green-soft: rgba(45, 212, 191, .14);
+      --blue: #60a5fa;
+      --coral: #f472b6;
+      --gold: #fbbf24;
+      --nav-bg: rgba(15, 23, 42, .88);
+      --surface: rgba(15, 23, 42, .84);
+      --surface-soft: rgba(255, 255, 255, .07);
+      --surface-ghost: rgba(255, 255, 255, .10);
+      --body-bg:
+        radial-gradient(circle at 18% 10%, rgba(45, 212, 191, .20), transparent 30rem),
+        radial-gradient(circle at 78% 22%, rgba(96, 165, 250, .18), transparent 32rem),
+        linear-gradient(180deg, #070b13 0, #0f172a 58rem, #05070d 100%);
+      color-scheme: dark;
+    }
+    body.modal-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    button { color: inherit; }
+    img, object, iframe { max-width: 100%; }
+
+    .page-progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      z-index: 100;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--gold), var(--coral), var(--blue));
+    }
+
+    .container {
+      width: calc(100% - 32px);
+      max-width: 1220px;
+      margin: 0 auto;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      padding: 12px 0;
+      border-bottom: 0;
+      background: color-mix(in srgb, var(--paper-soft) 78%, transparent);
+      backdrop-filter: blur(16px);
+    }
+    .nav-inner {
+      position: relative;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 10px 8px 12px;
+      background: var(--nav-bg);
+      box-shadow: 0 18px 42px rgba(21, 23, 29, .08);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 210px;
+      font-weight: 950;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--charcoal);
+      box-shadow: inset 0 -4px 0 rgba(255, 255, 255, .08);
+    }
+    .brand small {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 850;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+    }
+    .nav-links a {
+      border-radius: 999px;
+      padding: 10px 12px;
+      color: var(--soft-ink);
+      font-size: .9rem;
+      font-weight: 850;
+      white-space: nowrap;
+      transition: background .18s ease, color .18s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #fff;
+      background: var(--charcoal);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+    .nav-actions .btn-primary {
+      white-space: nowrap;
+    }
+    .nav-toggle { display: none; }
+
+    .btn {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 14px;
+      background: var(--surface);
+      color: var(--ink);
+      cursor: pointer;
+      font-weight: 900;
+      line-height: 1.15;
+      transition: transform .16s ease, border-color .16s ease, background .16s ease, color .16s ease;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: #a7b2c2;
+    }
+    .btn-primary {
+      border-color: var(--green);
+      background: var(--green);
+      color: #fff;
+    }
+    .btn-dark {
+      border-color: var(--charcoal);
+      background: var(--charcoal);
+      color: #fff;
+    }
+    .btn-coral {
+      border-color: var(--coral);
+      background: var(--coral);
+      color: #fff;
+    }
+    .btn-small {
+      min-height: 36px;
+      padding: 8px 11px;
+      font-size: .84rem;
+    }
+    .btn-icon {
+      width: 36px;
+      padding: 0;
+    }
+    .nav-actions .nav-toggle { display: none; }
+
+    .theme-picker {
+      position: relative;
+      display: inline-flex;
+    }
+    .theme-picker.open::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 118;
+      background: rgba(7, 10, 18, .58);
+      backdrop-filter: blur(8px);
+    }
+    .theme-toggle {
+      border-radius: 999px;
+      padding-left: 10px;
+    }
+    .theme-dots {
+      display: inline-flex;
+      gap: 3px;
+      align-items: center;
+    }
+    .theme-dots span,
+    .theme-swatch {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      border: 1px solid rgba(21, 23, 29, .16);
+      background: var(--swatch, var(--green));
+    }
+    .theme-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 120;
+      width: min(430px, calc(100vw - 18px));
+      min-height: 100vh;
+      display: none;
+      align-content: start;
+      gap: 10px;
+      padding: 18px;
+      border-left: 1px solid var(--line);
+      border-radius: 22px 0 0 22px;
+      background:
+        radial-gradient(circle at 12% 8%, color-mix(in srgb, var(--green) 22%, transparent), transparent 12rem),
+        var(--charcoal);
+      color: #fff;
+      box-shadow: var(--shadow-strong);
+      overflow: auto;
+    }
+    .theme-picker.open .theme-menu { display: grid; }
+    .theme-panel-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+    .theme-panel-head span {
+      display: block;
+      color: var(--gold);
+      font-size: .72rem;
+      font-weight: 950;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .theme-panel-head h3 {
+      margin: 6px 0 8px;
+      color: #fff;
+      font-size: 1.45rem;
+    }
+    .theme-panel-head p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, .78);
+      font-size: .9rem;
+      line-height: 1.5;
+    }
+    .theme-close {
+      width: 42px;
+      min-width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .08);
+      color: #fff;
+      cursor: pointer;
+      font-weight: 950;
+    }
+    .theme-choice {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 18px;
+      padding: 12px;
+      background: rgba(255, 255, 255, .055);
+      color: #fff;
+      cursor: pointer;
+      font-weight: 900;
+      text-align: left;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .theme-choice:hover,
+    .theme-choice.active {
+      transform: translateX(-4px);
+      border-color: color-mix(in srgb, var(--green) 65%, rgba(255, 255, 255, .18));
+      background: rgba(255, 255, 255, .10);
+    }
+    .theme-choice strong { color: #fff; }
+    .theme-choice > span:not(.theme-preview) {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .theme-label {
+      display: grid;
+      gap: 3px;
+    }
+    .theme-label small {
+      color: rgba(255, 255, 255, .86);
+      font-size: .76rem;
+      font-weight: 800;
+    }
+    .theme-preview {
+      width: 52px;
+      height: 42px;
+      flex: 0 0 auto;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      background:
+        radial-gradient(circle at 28% 28%, var(--preview-a), transparent 34%),
+        linear-gradient(135deg, var(--preview-b), var(--preview-c));
+      box-shadow: 0 18px 45px rgba(0, 0, 0, .25);
+    }
+
+    .hamburger {
+      width: 18px;
+      display: grid;
+      gap: 4px;
+    }
+    .hamburger span {
+      height: 2px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+
+    .nav-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+    }
+    .clock-pill {
+      min-width: 54px;
+      padding: 0 8px;
+      color: var(--soft-ink);
+      font-size: .82rem;
+      font-weight: 950;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+    .lang-buttons {
+      display: inline-flex;
+      gap: 3px;
+    }
+    .lang-btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 6px 8px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: .74rem;
+      font-weight: 950;
+    }
+    .lang-btn.active {
+      color: #fff;
+      background: var(--charcoal);
+    }
+
+    main section {
+      padding: 72px 0;
+      scroll-margin-top: 96px;
+    }
+    .section-head {
+      max-width: 820px;
+      margin-bottom: 28px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 9px;
+      border: 1px solid rgba(15, 159, 134, .24);
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: #087666;
+      font-size: .78rem;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { letter-spacing: 0; }
+    h1 {
+      margin-bottom: 18px;
+      font-size: 4.1rem;
+      line-height: 1;
+      font-weight: 950;
+      overflow-wrap: anywhere;
+    }
+    h2 {
+      margin: 12px 0;
+      font-size: 2.5rem;
+      line-height: 1.08;
+      font-weight: 950;
+    }
+    h3 {
+      margin-bottom: 10px;
+      font-size: 1.16rem;
+      line-height: 1.24;
+      font-weight: 930;
+    }
+    p {
+      color: var(--soft-ink);
+      line-height: 1.65;
+    }
+    .lead {
+      max-width: 740px;
+      font-size: 1.08rem;
+    }
+
+    .hero {
+      min-height: 640px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(360px, .98fr);
+      align-items: center;
+      gap: 38px;
+      padding-top: 54px;
+      padding-bottom: 48px;
+    }
+    .hero h1 span {
+      display: block;
+      color: var(--green);
+      overflow-wrap: anywhere;
+    }
+    .hero-actions,
+    .chips,
+    .doc-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .hero-actions { margin-top: 24px; }
+    .chips { margin-top: 16px; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 30px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: #fff;
+      color: var(--soft-ink);
+      font-size: .82rem;
+      font-weight: 850;
+    }
+    .chip-green { border-color: rgba(15, 159, 134, .28); background: var(--green-soft); color: #087666; }
+    .chip-gold { border-color: rgba(217, 149, 34, .28); background: var(--gold-soft); color: #82540d; }
+    .chip-coral { border-color: rgba(222, 93, 93, .28); background: var(--coral-soft); color: #9b2f2f; }
+
+    .quick-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .quick-stat {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+    .quick-stat strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1.5rem;
+      color: var(--charcoal);
+    }
+    .quick-stat span {
+      color: var(--muted);
+      font-size: .86rem;
+      font-weight: 850;
+    }
+
+    .mac-window {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .mac-titlebar {
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 13px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-ghost);
+    }
+    .traffic-lights {
+      display: inline-flex;
+      gap: 7px;
+      flex: 0 0 auto;
+    }
+    .traffic-lights span {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #cbd5e1;
+    }
+    .traffic-lights span:first-child { background: #ff5f57; }
+    .traffic-lights span:nth-child(2) { background: #febc2e; }
+    .traffic-lights span:nth-child(3) { background: #28c840; }
+    .window-title {
+      min-width: 0;
+      flex: 1;
+      color: var(--ink);
+      font-weight: 950;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .cv-teaser-body {
+      display: grid;
+      gap: 18px;
+      padding: 18px;
+    }
+    .finder-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .finder-file {
+      min-height: 128px;
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      gap: 9px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface-soft);
+      text-align: center;
+    }
+    .file-icon {
+      width: 44px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 7px;
+      color: #fff;
+      background: var(--coral);
+      font-size: .78rem;
+      font-weight: 950;
+      box-shadow: inset 0 -7px 0 rgba(0, 0, 0, .08);
+    }
+    .finder-file strong {
+      max-width: 92%;
+      font-size: .9rem;
+      line-height: 1.22;
+    }
+    .cv-teaser-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 14px 18px;
+      border-top: 1px solid var(--line);
+      background: var(--surface-soft);
+    }
+    .cv-teaser-foot span {
+      color: var(--muted);
+      font-size: .88rem;
+      font-weight: 850;
+    }
+
+    .powershell-body {
+      display: grid;
+      gap: 16px;
+      padding: 18px;
+      background:
+        radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--green) 20%, transparent), transparent 18rem),
+        #07101f;
+      color: #dbeafe;
+    }
+    .terminal-screen {
+      min-height: 310px;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, .26);
+      border-radius: 18px;
+      padding: 18px;
+      background: rgba(2, 6, 23, .82);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 70px rgba(2, 6, 23, .26);
+      font-family: "Cascadia Code", "Consolas", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+    }
+    .terminal-line {
+      margin: 0 0 10px;
+      color: #c7d2fe;
+      font-size: .92rem;
+      line-height: 1.55;
+      opacity: 0;
+      transform: translateY(8px);
+      animation: terminalIn .55s ease forwards;
+      animation-delay: calc(var(--delay, 0) * 130ms);
+    }
+    .terminal-line strong { color: #fff; }
+    .terminal-prompt { color: #22d3ee; }
+    .terminal-command { color: #a7f3d0; }
+    .terminal-caret::after {
+      content: "_";
+      color: var(--green);
+      animation: caretBlink 1s steps(1) infinite;
+    }
+    .powershell-actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .powershell-actions span {
+      color: #bfdbfe;
+      font-size: .86rem;
+      font-weight: 850;
+    }
+    @keyframes terminalIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes caretBlink {
+      50% { opacity: 0; }
+    }
+
+    .tech-rail {
+      margin-top: 26px;
+      overflow: visible;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--surface);
+      box-shadow: 0 14px 34px rgba(21, 23, 29, .08);
+    }
+    .stack-showcase {
+      padding-top: 22px;
+    }
+    .stack-panorama {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 20% 0, color-mix(in srgb, var(--green) 16%, transparent), transparent 20rem),
+        var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .stack-panorama-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 22px 10px;
+    }
+    .stack-panorama-head h2 {
+      margin-bottom: 4px;
+      font-size: 2rem;
+    }
+    .stack-panorama-head p {
+      max-width: 560px;
+      margin-bottom: 0;
+    }
+    .panorama-row {
+      overflow: hidden;
+      padding: 10px 0;
+    }
+    .panorama-track {
+      width: max-content;
+      display: flex;
+      gap: 12px;
+      padding: 0 14px;
+      animation: panoramaMove 28s linear infinite;
+    }
+    .panorama-row:nth-child(3) .panorama-track {
+      animation-direction: reverse;
+      animation-duration: 34s;
+    }
+    .stack-panorama:hover .panorama-track {
+      animation-play-state: paused;
+    }
+    @keyframes panoramaMove {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .rail-track,
+    .logo-track {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px;
+      animation: none;
+    }
+    .tech-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 10px 7px 7px;
+      background: var(--surface);
+      color: var(--soft-ink);
+      font-size: .82rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .logo-icon {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: #f1f5f9;
+      color: var(--charcoal);
+      overflow: hidden;
+      flex: 0 0 auto;
+    }
+    .logo-icon::after {
+      content: attr(data-fallback);
+      font-size: .68rem;
+      font-weight: 950;
+    }
+    .logo-icon img {
+      position: absolute;
+      inset: 5px;
+      width: calc(100% - 10px);
+      height: calc(100% - 10px);
+      object-fit: contain;
+      background: #f1f5f9;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      bottom: 12px;
+      left: 15px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--green), var(--gold), var(--coral), var(--blue));
+    }
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 18px;
+      padding: 18px 20px 18px 54px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 22px;
+      left: 9px;
+      width: 14px;
+      height: 14px;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 1px rgba(15, 159, 134, .34);
+    }
+    .timeline-year {
+      color: var(--green);
+      font-weight: 950;
+    }
+    .timeline-item p { margin-bottom: 0; }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: 0 14px 34px rgba(21, 23, 29, .08);
+      transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: #aab5c5;
+      box-shadow: 0 18px 48px rgba(21, 23, 29, .13);
+    }
+    .hero,
+    .stack-panorama,
+    .timeline-item,
+    .competence-card,
+    .project-card,
+    .veille-window,
+    .doc-group,
+    .contact-layout {
+      animation: sectionRise .7s ease both;
+      animation-delay: var(--rise-delay, 0ms);
+    }
+    @keyframes sectionRise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card-pad { padding: 18px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card-kicker {
+      display: inline-flex;
+      margin-bottom: 12px;
+      color: var(--green);
+      font-size: .78rem;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+    .competence-card {
+      display: grid;
+      gap: 0;
+      align-content: start;
+      padding: 0;
+      overflow: hidden;
+      border-top: 5px solid var(--green);
+      border-radius: 18px;
+      min-height: 0;
+    }
+    .competence-card[data-accent="blue"] { border-top-color: var(--blue); }
+    .competence-card[data-accent="coral"] { border-top-color: var(--coral); }
+    .competence-card[data-accent="gold"] { border-top-color: var(--gold); }
+    .competence-card[data-accent="violet"] { border-top-color: var(--violet); }
+    .competence-content {
+      display: grid;
+      gap: 12px;
+      padding: 16px;
+    }
+    .competence-title {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .competence-code {
+      min-width: 46px;
+      display: inline-flex;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 8px;
+      color: var(--muted);
+      background: var(--surface-ghost);
+      font-size: .75rem;
+      font-weight: 950;
+    }
+    .competence-card p {
+      margin-bottom: 0;
+      font-size: .94rem;
+      line-height: 1.55;
+    }
+    .competence-mini-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 16px 16px;
+    }
+    .proof-count {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 9px;
+      color: var(--muted);
+      background: var(--surface-soft);
+      font-size: .76rem;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+    .logo-strip {
+      overflow: visible;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-soft);
+    }
+    .logo-strip .logo-track {
+      width: auto;
+      flex-wrap: wrap;
+      animation: none;
+      padding: 9px;
+    }
+    .competence-doc-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: -2px;
+    }
+    .outcome-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .outcome-list li {
+      position: relative;
+      padding-left: 16px;
+      color: var(--soft-ink);
+      line-height: 1.48;
+    }
+    .outcome-list li::before {
+      content: "";
+      position: absolute;
+      top: .72em;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+    .proof-docs {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .proof-doc {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface-soft);
+    }
+    .proof-doc strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: .92rem;
+      line-height: 1.25;
+    }
+    .proof-doc span {
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 850;
+    }
+    .proof-actions {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+    }
+
+    .project-card {
+      min-height: 245px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px;
+      overflow: hidden;
+    }
+    .project-visual {
+      position: relative;
+      min-height: 136px;
+      display: grid;
+      align-content: space-between;
+      gap: 14px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      background:
+        linear-gradient(90deg, color-mix(in srgb, var(--green) 12%, transparent) 1px, transparent 1px),
+        linear-gradient(color-mix(in srgb, var(--green) 10%, transparent) 1px, transparent 1px),
+        linear-gradient(135deg, var(--surface-soft), var(--surface));
+      background-size: 28px 28px, 28px 28px, auto;
+    }
+    .project-visual::after {
+      content: "";
+      position: absolute;
+      inset: auto 14px 38px 14px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--green), var(--blue), transparent);
+      opacity: .58;
+    }
+    .visual-logo-pack {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .visual-node {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+      box-shadow: 0 10px 22px rgba(21, 23, 29, .10);
+      animation: visualFloat 4.8s ease-in-out infinite;
+      animation-delay: calc(var(--i, 0) * 140ms);
+    }
+    .visual-node .logo-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+    }
+    .visual-caption {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      width: max-content;
+      max-width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 10px;
+      background: var(--surface);
+      color: var(--soft-ink);
+      font-size: .76rem;
+      font-weight: 950;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    @keyframes visualFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .tag {
+      border: 1px solid #cbd5e1;
+      border-radius: 999px;
+      padding: 5px 9px;
+      color: #475569;
+      background: #f8fafc;
+      font-size: .76rem;
+      font-weight: 850;
+    }
+
+    .document-board {
+      display: grid;
+      grid-template-columns: minmax(280px, .7fr) minmax(0, 1.3fr);
+      gap: 20px;
+      align-items: start;
+    }
+    .document-intro {
+      position: sticky;
+      top: 104px;
+      padding: 22px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 22px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, 0)),
+        var(--charcoal);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .document-intro p { color: #dce5ef; }
+    .document-intro .eyebrow {
+      border-color: rgba(255, 255, 255, .18);
+      background: rgba(255, 255, 255, .1);
+      color: #fff;
+    }
+    .document-groups {
+      display: grid;
+      gap: 16px;
+    }
+    .doc-group {
+      overflow: hidden;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--surface);
+      box-shadow: 0 14px 34px rgba(21, 23, 29, .07);
+    }
+    .doc-group-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 0;
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-soft);
+    }
+    .doc-group-head h3 { margin-bottom: 4px; }
+    .doc-count {
+      min-width: max-content;
+      border-radius: 999px;
+      padding: 6px 9px;
+      background: #f1f5f9;
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 950;
+    }
+    .doc-table {
+      display: grid;
+      gap: 0;
+      padding: 6px 16px 16px;
+    }
+    .doc-line {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+    }
+    .doc-line:first-child { border-top: 0; }
+    .doc-line strong {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1.25;
+    }
+    .doc-line span {
+      color: var(--muted);
+      font-size: .8rem;
+      font-weight: 850;
+    }
+
+    .veille-window {
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+    .veille-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(300px, .88fr);
+      gap: 0;
+    }
+    .veille-main {
+      padding: 24px;
+      border-right: 1px solid var(--line);
+    }
+    .veille-main h3 {
+      font-size: 1.55rem;
+      margin-bottom: 10px;
+    }
+    .veille-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .veille-step {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--surface-soft);
+    }
+    .veille-step strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+    .veille-step p {
+      margin-bottom: 0;
+      font-size: .92rem;
+      line-height: 1.55;
+    }
+    .veille-source-list {
+      display: grid;
+      gap: 8px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .veille-source-list li {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--soft-ink);
+      font-weight: 850;
+    }
+    .veille-source-list li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      background: var(--green);
+      box-shadow: 10px 0 0 var(--blue);
+      flex: 0 0 auto;
+    }
+    .veille-pdf-card {
+      display: grid;
+      align-content: center;
+      gap: 14px;
+      padding: 24px;
+      background: linear-gradient(180deg, var(--surface), var(--surface-soft));
+    }
+    .document-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    .document-filter {
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 999px;
+      padding: 8px 10px;
+      color: #fff;
+      background: rgba(255, 255, 255, .08);
+      cursor: pointer;
+      font-size: .82rem;
+      font-weight: 900;
+    }
+    .document-filter.active {
+      background: #fff;
+      color: var(--charcoal);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(340px, 1.1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+    .contact-panel {
+      padding: 22px;
+      border-radius: 8px;
+      background: var(--charcoal);
+      color: #fff;
+    }
+    .contact-panel p { color: #dce5ef; }
+    .contact-panel .eyebrow {
+      border-color: rgba(255, 255, 255, .18);
+      background: rgba(255, 255, 255, .1);
+      color: #fff;
+    }
+    .contact-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .07);
+    }
+    .contact-item span {
+      color: #b8c4d3;
+      font-size: .78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .contact-item strong {
+      display: block;
+      margin-top: 3px;
+      color: #fff;
+      overflow-wrap: anywhere;
+    }
+    .contact-form {
+      display: grid;
+      gap: 12px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+    .field label {
+      color: var(--soft-ink);
+      font-size: .84rem;
+      font-weight: 900;
+    }
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 11px 12px;
+      color: var(--ink);
+      background: var(--surface-soft);
+      outline: 0;
+      transition: border-color .16s ease, box-shadow .16s ease;
+    }
+    .field textarea {
+      min-height: 136px;
+      resize: vertical;
+    }
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 4px rgba(15, 159, 134, .12);
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      background: var(--surface);
+      font-size: .9rem;
+      font-weight: 850;
+    }
+
+    .pdf-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 120;
+      display: none;
+      place-items: center;
+      padding: 16px;
+      background: rgba(21, 23, 29, .74);
+    }
+    .pdf-modal.open { display: grid; }
+    .modal-window {
+      width: min(1120px, calc(100vw - 32px));
+      height: min(860px, calc(100vh - 32px));
+      display: grid;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: var(--shadow-strong);
+    }
+    .modal-titlebar {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-ghost);
+    }
+    .window-close {
+      border: 0;
+      padding: 4px;
+      background: transparent;
+      cursor: pointer;
+    }
+    .modal-title {
+      flex: 1;
+      min-width: 0;
+      color: var(--ink);
+      font-weight: 950;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .modal-tools {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .modal-content {
+      min-height: 0;
+      background: #20242c;
+    }
+    .pdf-object,
+    .modal-content iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: 0;
+      background: #fff;
+    }
+    .pdf-fallback {
+      display: grid;
+      place-items: center;
+      min-height: 100%;
+      padding: 24px;
+      color: #eef2f7;
+      text-align: center;
+      background: #20242c;
+    }
+    .pdf-fallback a {
+      display: inline-flex;
+      margin-top: 12px;
+      color: #fff;
+      font-weight: 950;
+      text-decoration: underline;
+    }
+
+    .theme-toast {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 130;
+      width: min(360px, calc(100vw - 36px));
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--charcoal);
+      color: #fff;
+      box-shadow: var(--shadow-strong);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(14px);
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .theme-toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .theme-toast-content {
+      display: grid;
+      gap: 3px;
+      padding: 14px 15px 12px;
+    }
+    .theme-toast strong {
+      color: #fff;
+      font-size: .94rem;
+    }
+    .theme-toast span {
+      color: rgba(255, 255, 255, .78);
+      font-size: .82rem;
+      line-height: 1.4;
+    }
+    .theme-toast-progress {
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(90deg, var(--green), var(--blue), var(--coral), var(--gold));
+      transform-origin: left;
+      animation: toastProgress 4s linear forwards;
+    }
+    .theme-toast.show .theme-toast-progress {
+      animation: toastProgress 4s linear forwards;
+    }
+    @keyframes toastProgress {
+      from { transform: scaleX(1); }
+      to { transform: scaleX(0); }
+    }
+
+    @media (max-width: 1080px) {
+      .hero,
+      .document-board,
+      .veille-layout,
+      .grid-3,
+      .grid-2,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+      .document-intro { position: relative; top: 0; }
+      .veille-main { border-right: 0; border-bottom: 1px solid var(--line); }
+      h1 { font-size: 3.05rem; }
+      h2 { font-size: 2.05rem; }
+    }
+
+    @media (max-width: 1100px) {
+      .site-nav { padding: 8px 0; }
+      .nav-inner { min-height: 56px; }
+      .nav-actions .nav-toggle {
+        width: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        padding: 0;
+        font-size: 0;
+        gap: 0;
+      }
+      .nav-actions .nav-toggle .hamburger { width: 18px; }
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
+        display: grid;
+        gap: 5px;
+        padding: 8px;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: opacity .18s ease, transform .18s ease;
+      }
+      .site-nav.nav-open .nav-links {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+      .nav-links a { padding: 13px; }
+      .nav-actions .btn-primary { display: none; }
+      .theme-toggle {
+        min-width: 44px;
+        width: 44px;
+        padding: 0;
+        font-size: 0;
+      }
+      .nav-meta {
+        gap: 3px;
+        padding: 3px;
+      }
+      .clock-pill {
+        min-width: 45px;
+        padding: 0 5px;
+        font-size: .72rem;
+      }
+      .lang-btn {
+        padding: 5px 6px;
+        font-size: .66rem;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: 366px;
+        max-width: calc(100% - 24px);
+        margin-left: 12px;
+        margin-right: 12px;
+      }
+      .brand {
+        min-width: 0;
+        gap: 10px;
+      }
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+      }
+      .brand > span:last-child { display: none; }
+      .nav-inner { gap: 10px; }
+      .nav-actions { flex: 0 0 auto; }
+      main section { padding: 54px 0; }
+      .hero {
+        min-height: auto;
+        padding-top: 38px;
+        gap: 26px;
+      }
+      .hero > div,
+      .lead,
+      .chips,
+      .hero .hero-actions {
+        max-width: 366px;
+      }
+      .chips {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .chip {
+        justify-content: center;
+        min-width: 0;
+        text-align: center;
+      }
+      .hero .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .hero .hero-actions .btn { width: 100%; }
+      h1 { font-size: 2.05rem; line-height: 1.08; }
+      h2 { font-size: 1.72rem; }
+      .lead { font-size: 1rem; }
+      .quick-stats,
+      .finder-grid,
+      .veille-grid,
+      .timeline-item,
+      .proof-doc,
+      .doc-line {
+        grid-template-columns: 1fr;
+      }
+      .timeline-item { padding-left: 48px; }
+      .proof-actions,
+      .doc-actions {
+        justify-content: flex-start;
+      }
+      .contact-layout { grid-template-columns: 1fr; }
+      .modal-window {
+        width: calc(100vw - 18px);
+        height: calc(100vh - 18px);
+      }
+      .modal-titlebar {
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      .modal-title {
+        order: 3;
+        flex-basis: 100%;
+      }
+      .modal-tools { margin-left: auto; }
+      .brand small { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+      }
+    }
+  </style>
+</head>
+<body data-theme="luxury">
+  <div class="page-progress" id="pageProgress"></div>
+
+  <nav class="site-nav" id="siteNav">
+    <div class="container nav-inner">
+      <a class="brand" href="#accueil" aria-label="Retour à l'accueil">
+        <span class="brand-mark">TA</span>
+        <span>Théo André<small>BTS SIO option SISR</small></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#accueil">Accueil</a>
+        <a href="#parcours">Parcours</a>
+        <a href="#competences">Compétences</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#veille">Veille</a>
+        <a href="#documents">Documents</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <div class="nav-meta" aria-label="Heure et langue">
+          <span class="clock-pill" id="liveClock">--:--</span>
+          <div class="lang-buttons" id="languageSwitch" aria-label="Changer la langue">
+            <button class="lang-btn active" type="button" data-lang="fr">FR</button>
+            <button class="lang-btn" type="button" data-lang="en">EN</button>
+            <button class="lang-btn" type="button" data-lang="es">ES</button>
+          </div>
+        </div>
+        <div class="theme-picker" id="themePicker">
+          <button class="btn btn-small theme-toggle" id="themeToggle" type="button" aria-label="Changer le thème couleur" aria-expanded="false">
+            <span class="theme-dots" aria-hidden="true">
+              <span style="--swatch:#ff4ecd"></span>
+              <span style="--swatch:#39ff14"></span>
+              <span style="--swatch:#7c3aed"></span>
+            </span>
+            Thème
+          </button>
+          <div class="theme-menu" id="themeMenu" aria-label="Choix du thème"></div>
+        </div>
+        <button class="btn btn-small nav-toggle" id="navToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span class="hamburger" aria-hidden="true"><span></span><span></span><span></span></span>
+          Menu
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="container hero" id="accueil">
+      <div>
+        <span class="eyebrow">Portfolio BTS SIO SISR</span>
+        <h1>Théo André <span>Systèmes,<br>réseaux et<br>cybersécurité</span></h1>
+        <p class="lead" id="heroLead">Je m'appelle Théo André, je viens de Saint-Pierre-le-Moûtier et je suis étudiant en deuxième année de BTS SIO option SISR.</p>
+        <div class="chips" aria-label="Domaines principaux">
+          <span class="chip chip-green">Windows Server</span>
+          <span class="chip">Active Directory</span>
+          <span class="chip">Linux</span>
+          <span class="chip chip-coral">Cybersécurité</span>
+          <span class="chip chip-gold">Services réseau</span>
+          <span class="chip">Documentation E5</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#competences">Voir les compétences</a>
+          <button class="btn btn-dark" type="button" data-preview="cv">Prévisualiser le CV</button>
+          <a class="btn" href="fichiers/cv-theo-andre-2025.pdf" download>Télécharger le CV</a>
+        </div>
+        <div class="quick-stats" aria-label="Résumé du portfolio">
+          <div class="quick-stat"><strong>15</strong><span>documents intégrés</span></div>
+          <div class="quick-stat"><strong>6</strong><span>compétences E5</span></div>
+          <div class="quick-stat"><strong>SISR</strong><span>infrastructure et sécurité</span></div>
+        </div>
+      </div>
+
+      <aside class="mac-window" aria-label="Présentation PowerShell">
+        <div class="mac-titlebar">
+          <div class="traffic-lights" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="window-title">PowerShell / Profil / André Théo</div>
+        </div>
+        <div class="powershell-body">
+          <div class="terminal-screen" id="profileTerminal">
+            <p class="terminal-line" style="--delay:1"><span class="terminal-prompt">PS C:\portfolio&gt;</span> <span class="terminal-command">whoami</span></p>
+            <p class="terminal-line" style="--delay:2"><strong>andre-theo</strong></p>
+            <p class="terminal-line" style="--delay:3"><span class="terminal-prompt">PS C:\portfolio&gt;</span> <span class="terminal-command">Get-Profile</span></p>
+            <p class="terminal-line" style="--delay:4">Nom : <strong>André</strong></p>
+            <p class="terminal-line" style="--delay:5">Prénom : <strong>Théo</strong></p>
+            <p class="terminal-line" style="--delay:6">Localité : <strong>Saint-Pierre-le-Moûtier</strong></p>
+            <p class="terminal-line" style="--delay:7">Formation : <strong>BTS SIO option SISR - 2e année</strong></p>
+            <p class="terminal-line terminal-caret" style="--delay:8">Objectif : systèmes, réseaux, cybersécurité</p>
+          </div>
+          <div class="powershell-actions">
+            <span>CV et annexe E5 restent disponibles en aperçu.</span>
+            <div class="doc-actions">
+              <button class="btn btn-primary btn-small" type="button" data-preview="cv">CV</button>
+              <button class="btn btn-small" type="button" data-preview="annexe-e5">E5</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="container stack-showcase" aria-label="Compétences techniques">
+      <div class="stack-panorama">
+        <div class="stack-panorama-head">
+          <div>
+            <span class="eyebrow">Stack SISR</span>
+            <h2>Les environnements que j'ai travaillés</h2>
+          </div>
+          <p>Les logos tournent ici dans une zone dédiée, pleine largeur, pour montrer rapidement les outils vus en TP, en stage et dans les procédures.</p>
+        </div>
+        <div class="panorama-row">
+          <div class="panorama-track" id="stackTrackOne"></div>
+        </div>
+        <div class="panorama-row">
+          <div class="panorama-track" id="stackTrackTwo"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="parcours">
+      <div class="section-head">
+        <span class="eyebrow">Parcours</span>
+        <h2>Une progression orientée SISR</h2>
+        <p>Le parcours met en avant les périodes de stage, les travaux pratiques et l'objectif professionnel : devenir opérationnel sur le support, les systèmes, les réseaux et la cybersécurité.</p>
+      </div>
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <section class="container" id="competences">
+      <div class="section-head">
+        <span class="eyebrow">Compétences + TP</span>
+        <h2>Chaque compétence montre directement les preuves</h2>
+        <p>Les logos restent fixes pour identifier rapidement les outils travaillés. Chaque compétence garde ses TP associés, avec aperçu PDF uniquement quand on clique.</p>
+      </div>
+      <div class="grid grid-3" id="competenceGrid"></div>
+    </section>
+
+    <section class="container" id="realisations">
+      <div class="section-head">
+        <span class="eyebrow">Réalisations</span>
+        <h2>Ce que j'ai vraiment manipulé</h2>
+        <p>Une synthèse courte des réalisations techniques pour avoir une vue claire avant d'ouvrir les procédures.</p>
+      </div>
+      <div class="grid grid-3" id="projectGrid"></div>
+    </section>
+
+    <section class="container" id="veille">
+      <div class="section-head">
+        <span class="eyebrow">Veille informatique</span>
+        <h2>Veille IA 2026 : agents, outils et cybersécurité</h2>
+        <p>La veille est présentée comme un vrai dossier de travail : actualités récentes, outils utilisés, impact SISR et PDF propre pour l'oral.</p>
+      </div>
+      <article class="mac-window veille-window">
+        <div class="mac-titlebar">
+          <div class="traffic-lights" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="window-title">Veille informatique / IA / PDF</div>
+        </div>
+        <div class="veille-layout">
+          <div class="veille-main">
+            <span class="eyebrow">Sujet 2026</span>
+            <h3>Les agents IA deviennent des outils de travail</h3>
+            <p>La veille suit l'évolution des assistants IA capables d'agir dans un environnement de travail : génération de code, automatisation bureautique, supervision des agents et enjeux de sécurité pour les systèmes d'information.</p>
+            <div class="veille-grid">
+              <div class="veille-step">
+                <strong>1. Sources officielles</strong>
+                <p>OpenAI, Microsoft, Google Cloud, Anthropic et ANSSI pour éviter les infos floues ou non vérifiées.</p>
+              </div>
+              <div class="veille-step">
+                <strong>2. Outils utilisés</strong>
+                <p>Navigateur web, recherche ciblée, Codex pour organiser les notes et export PDF local.</p>
+              </div>
+              <div class="veille-step">
+                <strong>3. Angle SISR</strong>
+                <p>Observer ce que l'IA change pour le support, l'administration, l'automatisation et la cybersécurité.</p>
+              </div>
+              <div class="veille-step">
+                <strong>4. Analyse critique</strong>
+                <p>Garder une logique de contrôle humain, de permissions, de traçabilité et de protection des données.</p>
+              </div>
+            </div>
+            <ul class="veille-source-list">
+              <li>Codex et Claude Code : agents de développement</li>
+              <li>Copilot et Gemini Enterprise : agents en entreprise</li>
+              <li>ANSSI : approche par les risques cyber liés à l'IA</li>
+            </ul>
+          </div>
+          <aside class="veille-pdf-card">
+            <div>
+              <span class="card-kicker">Document associé</span>
+              <h3>Veille IA 2026</h3>
+              <p>Document rédigé pour présenter clairement les tendances IA, les outils suivis et les impacts pour un profil SISR.</p>
+            </div>
+            <div class="proof-doc" style="grid-template-columns:1fr">
+              <div>
+                <strong>veille-ia-2026.pdf</strong>
+                <span>PDF de veille actualisé, sans aperçu vide dans la page.</span>
+              </div>
+            </div>
+            <div class="doc-actions">
+              <button class="btn btn-primary" type="button" data-preview="veille">Prévisualiser la veille</button>
+              <a class="btn" href="fichiers/veille-ia-2026.pdf" download>Télécharger</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+    </section>
+
+    <section class="container" id="documents">
+      <div class="document-board">
+        <aside class="document-intro">
+          <span class="eyebrow">Documents</span>
+          <h2>Un classeur clair pour retrouver les PDF</h2>
+          <p>Les documents sont rangés par familles : E5, stages, patrimoine, services et cybersécurité. Les TP restent aussi visibles dans les compétences, mais ici tu as le sommaire général.</p>
+          <div class="document-toolbar" id="documentFilters"></div>
+          <div class="hero-actions">
+            <button class="btn btn-primary" type="button" data-preview="annexe-e5">Prévisualiser l'annexe E5</button>
+            <a class="btn" href="fichiers/annexe-e5-tableau-synthese.pdf" download>Télécharger l'annexe</a>
+          </div>
+        </aside>
+        <div class="document-groups" id="documentGroups"></div>
+      </div>
+    </section>
+
+    <section class="container" id="contact">
+      <div class="contact-layout">
+        <div class="contact-panel">
+          <span class="eyebrow">Contact</span>
+          <h2 style="color:#fff">Échanger sur une opportunité informatique</h2>
+          <p>Je peux présenter mes TP, mes stages et mon profil SISR de manière claire en entretien. Le formulaire prépare directement un mail avec les informations utiles.</p>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div>
+                <span>Email</span>
+                <strong id="contactEmailText">theo.andre@email.com</strong>
+              </div>
+              <a class="btn btn-small" id="contactEmailLink" href="mailto:theo.andre@email.com">Écrire</a>
+            </div>
+            <div class="contact-item">
+              <div>
+                <span>Profil</span>
+                <strong>BTS SIO SISR - support, systèmes, réseaux</strong>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div>
+                <span>Dossier</span>
+                <strong>CV, stages, annexe E5 et procédures TP</strong>
+              </div>
+              <button class="btn btn-small" type="button" data-preview="cv">CV</button>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="field">
+            <label for="senderName">Nom</label>
+            <input id="senderName" name="senderName" autocomplete="name" placeholder="Votre nom" />
+          </div>
+          <div class="field">
+            <label for="senderEmail">Email</label>
+            <input id="senderEmail" name="senderEmail" type="email" autocomplete="email" placeholder="votre.email@exemple.fr" />
+          </div>
+          <div class="field">
+            <label for="subject">Sujet</label>
+            <input id="subject" name="subject" value="Contact depuis le portfolio" />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message">Bonjour Théo, je souhaite échanger avec vous au sujet de votre profil BTS SIO SISR.</textarea>
+          </div>
+          <div class="hero-actions" style="margin-top:0">
+            <button class="btn btn-primary" type="submit">Préparer le mail</button>
+            <a class="btn" href="fichiers/cv-theo-andre-2025.pdf" download>Télécharger le CV</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap">
+      <span>Théo André - Portfolio BTS SIO SISR</span>
+      <a href="#accueil">Retour en haut</a>
+    </div>
+  </footer>
+
+  <div class="pdf-modal" id="pdfModal" aria-hidden="true">
+    <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-titlebar">
+        <button class="window-close" id="modalClose" type="button" aria-label="Fermer l'aperçu">
+          <span class="traffic-lights" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+        <div class="modal-title" id="modalTitle">Aperçu PDF</div>
+        <div class="modal-tools">
+          <a class="btn btn-small" id="modalDownload" href="#" download>Télécharger</a>
+          <a class="btn btn-small" id="modalExternal" href="#" target="_blank" rel="noopener">Ouvrir</a>
+        </div>
+      </div>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <div class="theme-toast" id="themeToast" aria-live="polite">
+    <div class="theme-toast-content">
+      <strong>Thème appliqué</strong>
+      <span>Le portfolio vient de changer d'ambiance.</span>
+    </div>
+    <div class="theme-toast-progress"></div>
+  </div>
+
+  <script>
+    const contactEmail = "theo.andre@email.com";
+
+    const logos = {
+      windows: { label: "Windows Server", fallback: "WS", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg" },
+      ad: { label: "Active Directory", fallback: "AD" },
+      gpo: { label: "GPO", fallback: "GPO" },
+      ubuntu: { label: "Ubuntu", fallback: "Ub", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-original.svg" },
+      linux: { label: "Linux", fallback: "Lx", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
+      kali: { label: "Kali Linux", fallback: "KL", src: "https://cdn.simpleicons.org/kalilinux/557C94" },
+      pfsense: { label: "pfSense", fallback: "pf", src: "https://cdn.simpleicons.org/pfsense/212121" },
+      openvpn: { label: "OpenVPN", fallback: "VPN", src: "https://cdn.simpleicons.org/openvpn/ea7e20" },
+      docker: { label: "Docker", fallback: "Dk", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+      nagios: { label: "Nagios", fallback: "Ng", src: "https://cdn.simpleicons.org/nagios/111111" },
+      apache: { label: "Apache", fallback: "Ap", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apache/apache-original.svg" },
+      mariadb: { label: "MariaDB", fallback: "DB", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original.svg" },
+      proftpd: { label: "ProFTPD TLS", fallback: "FTP" },
+      filezilla: { label: "FileZilla", fallback: "FZ", src: "https://cdn.simpleicons.org/filezilla/bf0000" },
+      snort: { label: "Snort", fallback: "IDS" },
+      wordpress: { label: "WordPress", fallback: "WP", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg" },
+      html: { label: "HTML", fallback: "H5", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+      css: { label: "CSS", fallback: "C3", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
+      js: { label: "JavaScript", fallback: "JS", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+      pdf: { label: "PDF", fallback: "PDF" },
+      e5: { label: "Annexe E5", fallback: "E5" },
+      veille: { label: "Veille", fallback: "V" },
+      support: { label: "Support IT", fallback: "IT" },
+      ai: { label: "Intelligence artificielle", fallback: "IA" },
+      openai: { label: "OpenAI", fallback: "AI", src: "https://cdn.simpleicons.org/openai/111111" },
+      microsoft: { label: "Microsoft Copilot", fallback: "MS", src: "https://cdn.simpleicons.org/microsoft/5E5E5E" },
+      google: { label: "Google Gemini", fallback: "G", src: "https://cdn.simpleicons.org/google/4285F4" },
+      anthropic: { label: "Claude", fallback: "Cl", src: "https://cdn.simpleicons.org/anthropic/191919" },
+      anssi: { label: "ANSSI", fallback: "FR" }
+    };
+
+    const documents = {
+      cv: { title: "CV Théo André 2025", type: "CV", file: "fichiers/cv-theo-andre-2025.pdf", desc: "CV professionnel pour présenter la formation, les stages et les compétences." },
+      "annexe-e5": { title: "Annexe E5 - Tableau de synthèse", type: "E5", file: "fichiers/annexe-e5-tableau-synthese.pdf", desc: "Tableau de synthèse des situations professionnelles et compétences." },
+      "stage-sio1": { title: "Rapport de stage SIO1 - Centres Sociaux", type: "Stage", file: "fichiers/rapport-stage-sio1-centres-sociaux.pdf", desc: "Missions de première année : réseau, cybersécurité, WordPress, matériel et documentation." },
+      "stage-sio2": { title: "Rapport de stage SIO2 - Roulez Jeunesse", type: "Stage", file: "fichiers/rapport-stage-sio2-roulez-jeunesse.pdf", desc: "Missions de deuxième année : sauvegardes, maintenance, vidéosurveillance, sécurité et site web." },
+      "attestation-sio1": { title: "Attestation de stage SIO1", type: "Stage", file: "fichiers/attestation-stage-sio1.pdf", desc: "Attestation officielle de première année." },
+      "attestation-sio2": { title: "Attestation de stage SIO2", type: "Stage", file: "fichiers/attestation-stage.pdf", desc: "Attestation officielle de deuxième année." },
+      "haute-dispo": { title: "Haute disponibilité - Heartbeat, DRBD, Apache", type: "TP", file: "fichiers/procedure-haute-disponibilite-heartbeat-drbd-apache.pdf", desc: "Cluster Linux, réplication DRBD, IP virtuelle Heartbeat et tests de bascule." },
+      nagios: { title: "Nagios Core sous Docker", type: "TP", file: "fichiers/procedure-nagios-core-docker.pdf", desc: "Déploiement d'une supervision avec Docker, configuration et vérification du service." },
+      ad: { title: "Active Directory - comptes et groupes", type: "TP", file: "fichiers/procedure-tp2-active-directory-comptes-groupes.pdf", desc: "OU, comptes, groupes, dossiers personnels, profils itinérants et droits." },
+      "linux-ad": { title: "Client Linux intégré au domaine AD", type: "TP", file: "fichiers/procedure-integration-client-linux-ad.pdf", desc: "Intégration Ubuntu au domaine Active Directory avec DNS, realm et tests." },
+      "mariadb-ad": { title: "MariaDB intégré au domaine AD", type: "TP", file: "fichiers/procedure-mariadb-integration-ad.pdf", desc: "Serveur Ubuntu/MariaDB relié au domaine AD avec configuration système et PAM." },
+      openvpn: { title: "pfSense - VPN OpenVPN", type: "TP", file: "fichiers/procedure-pfsense-openvpn.pdf", desc: "Autorité de certification, serveur OpenVPN, règles firewall et client VPN." },
+      ftp: { title: "FTP sécurisé - ProFTPD SSL/TLS", type: "TP", file: "fichiers/procedure-securisation-ftp-proftpd-tls.pdf", desc: "Serveur FTP sécurisé, certificats TLS, restriction utilisateur et tests FileZilla." },
+      snort: { title: "Mission E - Snort", type: "TP", file: "fichiers/mission-e-snort-theo-andre.pdf", desc: "Détection, analyse et documentation autour de Snort." },
+      veille: { title: "Veille IA 2026 - agents et cybersécurité", type: "Veille", file: "fichiers/veille-ia-2026.pdf", desc: "Actualité IA : agents, outils utilisés, impact SISR et risques cyber." }
+    };
+
+    const themes = [
+      { id: "neon", label: "Neon inferno", desc: "noir, violet, orange, glow assumé", colors: ["#ff4ecd", "#8b5cf6", "#fb923c"] },
+      { id: "matrix", label: "Matrix overdose", desc: "vert terminal, pluie de données", colors: ["#39ff14", "#22c55e", "#bef264"] },
+      { id: "storm", label: "Purple storm", desc: "violet électrique, rose, bleu plasma", colors: ["#a855f7", "#ec4899", "#38bdf8"] },
+      { id: "luxury", label: "Luxury light", desc: "clair, premium, lisible pour recruteur", colors: ["#7c3aed", "#f97316", "#0ea5e9"] },
+      { id: "lite", label: "Lite recruteur", desc: "clair, rapide, animations allégées", colors: ["#0f766e", "#2563eb", "#f8fafc"] },
+      { id: "midnight", label: "Midnight red team", desc: "rouge, noir, intrusion contrôlée", colors: ["#ef4444", "#e11d48", "#f97316"] },
+      { id: "night", label: "Nuit classique", desc: "sombre, calme, sérieux pour présenter", colors: ["#2dd4bf", "#60a5fa", "#f472b6"] }
+    ];
+
+    const documentCategories = [
+      { id: "all", title: "Tous les documents", desc: "Sommaire complet du dossier.", docs: ["cv", "annexe-e5", "veille", "stage-sio1", "stage-sio2", "attestation-sio1", "attestation-sio2", "ad", "linux-ad", "mariadb-ad", "haute-dispo", "nagios", "openvpn", "ftp", "snort"] },
+      { id: "e5", title: "E5 et présentation", desc: "Les documents à ouvrir en priorité pour l'oral.", docs: ["cv", "annexe-e5", "veille"] },
+      { id: "stages", title: "Stages", desc: "Rapports et attestations des deux périodes de stage.", docs: ["stage-sio1", "stage-sio2", "attestation-sio1", "attestation-sio2"] },
+      { id: "patrimoine", title: "Patrimoine informatique", desc: "TP autour d'Active Directory et de l'intégration au domaine.", docs: ["ad", "linux-ad", "mariadb-ad"] },
+      { id: "services", title: "Services et supervision", desc: "Déploiement, supervision et disponibilité des services.", docs: ["haute-dispo", "nagios"] },
+      { id: "securite", title: "Cybersécurité", desc: "VPN, FTP sécurisé et détection.", docs: ["openvpn", "ftp", "snort"] }
+    ];
+
+    let activeDocumentCategory = "all";
+    let currentLang = new URLSearchParams(window.location.search).get("lang") || "fr";
+    if (!["fr", "en", "es"].includes(currentLang)) currentLang = "fr";
+    let themeToastTimer;
+
+    const translations = {
+      fr: {
+        heroLead: "Je m'appelle Théo André, je viens de Saint-Pierre-le-Moûtier et je suis étudiant en deuxième année de BTS SIO option SISR.",
+        terminal: [
+          ["PS C:\\portfolio>", "whoami"],
+          ["", "andre-theo"],
+          ["PS C:\\portfolio>", "Get-Profile"],
+          ["", "Nom : André"],
+          ["", "Prénom : Théo"],
+          ["", "Localité : Saint-Pierre-le-Moûtier"],
+          ["", "Formation : BTS SIO option SISR - 2e année"],
+          ["", "Objectif : systèmes, réseaux, cybersécurité"]
+        ],
+        placeholders: {
+          senderName: "Votre nom",
+          senderEmail: "votre.email@exemple.fr",
+          subject: "Contact depuis le portfolio",
+          message: "Bonjour Théo, je souhaite échanger avec vous au sujet de votre profil BTS SIO SISR."
+        }
+      },
+      en: {
+        heroLead: "My name is Théo André, I live in Saint-Pierre-le-Moûtier and I am a second-year BTS SIO student, SISR option.",
+        terminal: [
+          ["PS C:\\portfolio>", "whoami"],
+          ["", "andre-theo"],
+          ["PS C:\\portfolio>", "Get-Profile"],
+          ["", "Last name: André"],
+          ["", "First name: Théo"],
+          ["", "Location: Saint-Pierre-le-Moûtier"],
+          ["", "Course: BTS SIO, SISR option - second year"],
+          ["", "Goal: systems, networks, cybersecurity"]
+        ],
+        placeholders: {
+          senderName: "Your name",
+          senderEmail: "your.email@example.com",
+          subject: "Contact from the portfolio",
+          message: "Hello Théo, I would like to discuss your BTS SIO SISR profile."
+        }
+      },
+      es: {
+        heroLead: "Me llamo Théo André, vivo en Saint-Pierre-le-Moûtier y soy estudiante de segundo año de BTS SIO, opción SISR.",
+        terminal: [
+          ["PS C:\\portfolio>", "whoami"],
+          ["", "andre-theo"],
+          ["PS C:\\portfolio>", "Get-Profile"],
+          ["", "Apellido: André"],
+          ["", "Nombre: Théo"],
+          ["", "Localidad: Saint-Pierre-le-Moûtier"],
+          ["", "Formación: BTS SIO opción SISR - segundo año"],
+          ["", "Objetivo: sistemas, redes, ciberseguridad"]
+        ],
+        placeholders: {
+          senderName: "Tu nombre",
+          senderEmail: "tu.email@ejemplo.es",
+          subject: "Contacto desde el portfolio",
+          message: "Hola Théo, me gustaría hablar contigo sobre tu perfil BTS SIO SISR."
+        }
+      }
+    };
+
+    const pageTranslations = {
+      en: {
+        "Accueil": "Home",
+        "Parcours": "Path",
+        "Compétences": "Skills",
+        "Réalisations": "Projects",
+        "Veille": "Tech watch",
+        "Documents": "Documents",
+        "Contact": "Contact",
+        "Thème": "Theme",
+        "Menu": "Menu",
+        "Systèmes,": "Systems,",
+        "réseaux et": "networks and",
+        "cybersécurité": "cybersecurity",
+        "Cybersécurité": "Cybersecurity",
+        "Services réseau": "Network services",
+        "Documentation E5": "E5 documentation",
+        "Voir les compétences": "View skills",
+        "Prévisualiser le CV": "Preview CV",
+        "Télécharger le CV": "Download CV",
+        "documents intégrés": "embedded documents",
+        "compétences E5": "E5 skills",
+        "infrastructure et sécurité": "infrastructure and security",
+        "PowerShell / Profil / André Théo": "PowerShell / Profile / Théo André",
+        "CV et annexe E5 restent disponibles en aperçu.": "CV and E5 appendix remain available as previews.",
+        "Stack SISR": "SISR stack",
+        "Les environnements que j'ai travaillés": "Environments I have worked with",
+        "Les logos tournent ici dans une zone dédiée, pleine largeur, pour montrer rapidement les outils vus en TP, en stage et dans les procédures.": "The logos move in a dedicated full-width area to quickly show the tools used in practical work, internships and procedures.",
+        "Une progression orientée SISR": "A SISR-focused progression",
+        "Le parcours met en avant les périodes de stage, les travaux pratiques et l'objectif professionnel : devenir opérationnel sur le support, les systèmes, les réseaux et la cybersécurité.": "This path highlights internships, practical work and the professional goal: becoming operational in support, systems, networks and cybersecurity.",
+        "Compétences + TP": "Skills + practical work",
+        "Chaque compétence montre directement les preuves": "Each skill directly shows its evidence",
+        "Les logos restent fixes pour identifier rapidement les outils travaillés. Chaque compétence garde ses TP associés, avec aperçu PDF uniquement quand on clique.": "The logos stay fixed so the tools are easy to identify. Each skill keeps its linked practical work, with PDF preview only on click.",
+        "Ce que j'ai vraiment manipulé": "What I actually worked with",
+        "Une synthèse courte des réalisations techniques pour avoir une vue claire avant d'ouvrir les procédures.": "A short summary of the technical work, clear before opening the procedures.",
+        "Veille informatique": "Tech watch",
+        "Veille IA 2026 : agents, outils et cybersécurité": "AI Watch 2026: agents, tools and cybersecurity",
+        "La veille est présentée comme un vrai dossier de travail : actualités récentes, outils utilisés, impact SISR et PDF propre pour l'oral.": "The watch is presented as a real work file: recent news, tools used, SISR impact and a clean PDF for the oral exam.",
+        "Veille informatique / IA / PDF": "Tech watch / AI / PDF",
+        "Sujet 2026": "2026 topic",
+        "Les agents IA deviennent des outils de travail": "AI agents are becoming work tools",
+        "La veille suit l'évolution des assistants IA capables d'agir dans un environnement de travail : génération de code, automatisation bureautique, supervision des agents et enjeux de sécurité pour les systèmes d'information.": "This watch follows the evolution of AI assistants able to act in a work environment: code generation, office automation, agent supervision and security challenges for information systems.",
+        "1. Sources officielles": "1. Official sources",
+        "OpenAI, Microsoft, Google Cloud, Anthropic et ANSSI pour éviter les infos floues ou non vérifiées.": "OpenAI, Microsoft, Google Cloud, Anthropic and ANSSI to avoid vague or unverified information.",
+        "2. Outils utilisés": "2. Tools used",
+        "Navigateur web, recherche ciblée, Codex pour organiser les notes et export PDF local.": "Web browser, targeted search, Codex to organize notes and local PDF export.",
+        "3. Angle SISR": "3. SISR angle",
+        "Observer ce que l'IA change pour le support, l'administration, l'automatisation et la cybersécurité.": "Observe what AI changes for support, administration, automation and cybersecurity.",
+        "4. Analyse critique": "4. Critical analysis",
+        "Garder une logique de contrôle humain, de permissions, de traçabilité et de protection des données.": "Keep human control, permissions, traceability and data protection in mind.",
+        "Codex et Claude Code : agents de développement": "Codex and Claude Code: development agents",
+        "Copilot et Gemini Enterprise : agents en entreprise": "Copilot and Gemini Enterprise: enterprise agents",
+        "ANSSI : approche par les risques cyber liés à l'IA": "ANSSI: risk-based approach to AI cybersecurity",
+        "Document associé": "Linked document",
+        "Veille IA 2026": "AI Watch 2026",
+        "Document rédigé pour présenter clairement les tendances IA, les outils suivis et les impacts pour un profil SISR.": "A document written to clearly present AI trends, monitored tools and impacts for a SISR profile.",
+        "PDF de veille actualisé, sans aperçu vide dans la page.": "Updated tech-watch PDF, without an empty preview in the page.",
+        "Prévisualiser la veille": "Preview the watch",
+        "Télécharger": "Download",
+        "Un classeur clair pour retrouver les PDF": "A clear binder to find the PDFs",
+        "Les documents sont rangés par familles : E5, stages, patrimoine, services et cybersécurité. Les TP restent aussi visibles dans les compétences, mais ici tu as le sommaire général.": "Documents are grouped by family: E5, internships, assets, services and cybersecurity. Practical work is also visible in the skills section, while this is the full summary.",
+        "Prévisualiser l'annexe E5": "Preview the E5 appendix",
+        "Télécharger l'annexe": "Download appendix",
+        "Échanger sur une opportunité informatique": "Discuss an IT opportunity",
+        "Je peux présenter mes TP, mes stages et mon profil SISR de manière claire en entretien. Le formulaire prépare directement un mail avec les informations utiles.": "I can clearly present my practical work, internships and SISR profile in an interview. The form prepares an email with the useful information.",
+        "Écrire": "Write",
+        "Profil": "Profile",
+        "BTS SIO SISR - support, systèmes, réseaux": "BTS SIO SISR - support, systems, networks",
+        "Dossier": "File",
+        "CV, stages, annexe E5 et procédures TP": "CV, internships, E5 appendix and practical procedures",
+        "Nom": "Name",
+        "Sujet": "Subject",
+        "Message": "Message",
+        "Préparer le mail": "Prepare email",
+        "Retour en haut": "Back to top",
+        "Aperçu PDF": "PDF preview",
+        "Ouvrir": "Open",
+        "Aperçu PDF indisponible dans ce navigateur.": "PDF preview unavailable in this browser.",
+        "Ouvrir le PDF dans un nouvel onglet": "Open the PDF in a new tab",
+        "Ambiance visuelle": "Visual mood",
+        "Choix du thème": "Choose theme",
+        "Change tout le mood du portfolio sans recharger la page.": "Change the whole portfolio mood without reloading the page.",
+        "Fermer les thèmes": "Close themes",
+        "noir, violet, orange, glow assumé": "black, purple, orange, strong glow",
+        "vert terminal, pluie de données": "terminal green, data rain",
+        "violet électrique, rose, bleu plasma": "electric purple, pink, plasma blue",
+        "clair, premium, lisible pour recruteur": "light, premium, recruiter-friendly",
+        "clair, rapide, animations allégées": "light, fast, lighter animations",
+        "rouge, noir, intrusion contrôlée": "red, black, controlled intrusion",
+        "sombre, calme, sérieux pour présenter": "dark, calm, serious for presenting",
+        "Compétence": "Skill",
+        "PDF associés": "linked PDFs",
+        "Voir les preuves": "View evidence",
+        "Classeur": "Binder",
+        "Tous": "All",
+        "Tous les documents": "All documents",
+        "Sommaire complet du dossier.": "Full file summary.",
+        "E5 et présentation": "E5 and presentation",
+        "Les documents à ouvrir en priorité pour l'oral.": "Priority documents to open during the oral exam.",
+        "Stages": "Internships",
+        "Rapports et attestations des deux périodes de stage.": "Reports and certificates from both internship periods.",
+        "Patrimoine informatique": "IT asset management",
+        "TP autour d'Active Directory et de l'intégration au domaine.": "Practical work around Active Directory and domain integration.",
+        "Services et supervision": "Services and monitoring",
+        "Déploiement, supervision et disponibilité des services.": "Service deployment, monitoring and availability.",
+        "VPN, FTP sécurisé et détection.": "VPN, secure FTP and detection.",
+        "Aperçu": "Preview",
+        "Début du BTS SIO": "Start of BTS SIO",
+        "Découverte du support, des bases réseau, du développement, des bases de données et des premiers environnements systèmes.": "Discovery of support, networking basics, development, databases and first system environments.",
+        "Stage de première année": "First-year internship",
+        "Première immersion professionnelle avec des missions autour du réseau, de la cybersécurité, de WordPress et du matériel.": "First professional experience with tasks around networking, cybersecurity, WordPress and hardware.",
+        "Spécialisation SISR": "SISR specialization",
+        "Approfondissement Active Directory, Linux, services réseau, supervision, VPN, sauvegarde et procédures techniques.": "Further work on Active Directory, Linux, network services, monitoring, VPN, backup and technical procedures.",
+        "Stage de deuxième année": "Second-year internship",
+        "Missions orientées exploitation : sauvegardes OneDrive, maintenance Windows, vidéosurveillance, sécurité et site web.": "Operations-focused tasks: OneDrive backups, Windows maintenance, video surveillance, security and website.",
+        "Objectif": "Goal",
+        "Entrer dans le monde professionnel": "Enter the professional world",
+        "Après le BTS, l'objectif est de travailler dans l'informatique : support, systèmes, réseaux ou cybersécurité.": "After the BTS, the goal is to work in IT: support, systems, networks or cybersecurity.",
+        "Gérer le patrimoine informatique": "Manage IT assets",
+        "Structurer les ressources, administrer les comptes, organiser les droits et documenter l'environnement.": "Structure resources, administer accounts, organize permissions and document the environment.",
+        "Répondre aux incidents et aux demandes": "Respond to incidents and requests",
+        "Diagnostiquer, intervenir, sécuriser l'usage quotidien et rendre compte des actions effectuées.": "Diagnose, intervene, secure daily use and report actions performed.",
+        "Développer la présence en ligne": "Develop an online presence",
+        "Participer à la mise en valeur d'une organisation avec un contenu clair, cohérent et exploitable.": "Help promote an organization with clear, consistent and usable content.",
+        "Travailler en mode projet": "Work in project mode",
+        "Organiser les étapes, tester les configurations, produire des procédures et synthétiser les résultats.": "Organize steps, test configurations, produce procedures and summarize results.",
+        "Mettre à disposition un service informatique": "Provide an IT service",
+        "Installer, configurer, superviser et sécuriser des services utiles aux utilisateurs.": "Install, configure, monitor and secure services useful to users.",
+        "Organiser son développement professionnel": "Organize professional development",
+        "Suivre une veille, valoriser ses expériences et préparer une présentation professionnelle propre.": "Follow a tech watch, showcase experience and prepare a clean professional presentation.",
+        "Active Directory et gestion des comptes": "Active Directory and account management",
+        "Organisation des OU, groupes, comptes et droits pour un environnement Windows Server.": "Organization of OUs, groups, accounts and permissions for a Windows Server environment.",
+        "Domaine, comptes et droits": "Domain, accounts and permissions",
+        "Intégration Linux au domaine": "Linux domain integration",
+        "Intégration d'un client Ubuntu et d'un serveur MariaDB dans le domaine Active Directory.": "Integration of an Ubuntu client and MariaDB server into the Active Directory domain.",
+        "Jonction domaine Linux": "Linux domain join",
+        "Supervision Nagios Core": "Nagios Core monitoring",
+        "Mise en place d'une supervision sous Docker pour contrôler l'état des services.": "Monitoring setup under Docker to check service status.",
+        "Tableau de supervision": "Monitoring dashboard",
+        "Haute disponibilité Linux": "Linux high availability",
+        "Cluster avec DRBD, Heartbeat et Apache pour tester une continuité de service.": "Cluster with DRBD, Heartbeat and Apache to test service continuity.",
+        "Cluster et bascule": "Cluster and failover",
+        "VPN OpenVPN sur pfSense": "OpenVPN on pfSense",
+        "Configuration des certificats, du serveur VPN, des règles firewall et de la connexion client.": "Configuration of certificates, VPN server, firewall rules and client connection.",
+        "Tunnel VPN sécurisé": "Secure VPN tunnel",
+        "Sécurisation FTP TLS et Snort": "FTP TLS and Snort security",
+        "Mise en place de ProFTPD avec TLS et mission de détection/analyse autour de Snort.": "Setup of ProFTPD with TLS and detection/analysis work around Snort.",
+        "Transfert chiffré et IDS": "Encrypted transfer and IDS",
+        "Patrimoine": "Assets",
+        "Systèmes": "Systems",
+        "Services": "Services",
+        "Réseaux": "Networks",
+        "Sécurité": "Security",
+        "Technicien IT": "IT technician",
+        "Droits": "Permissions",
+        "Maintenance": "Maintenance",
+        "Support": "Support",
+        "Support IT": "IT support",
+        "Intelligence artificielle": "Artificial intelligence",
+        "Annexe E5": "E5 appendix",
+        "CV Théo André 2025": "Théo André CV 2025",
+        "Annexe E5 - Tableau de synthèse": "E5 appendix - summary table",
+        "Tableau de synthèse des situations professionnelles et compétences.": "Summary table of professional situations and skills.",
+        "Rapport de stage SIO1 - Centres Sociaux": "SIO1 internship report - Centres Sociaux",
+        "Missions de première année : réseau, cybersécurité, WordPress, matériel et documentation.": "First-year tasks: networking, cybersecurity, WordPress, hardware and documentation.",
+        "Rapport de stage SIO2 - Roulez Jeunesse": "SIO2 internship report - Roulez Jeunesse",
+        "Missions de deuxième année : sauvegardes, maintenance, vidéosurveillance, sécurité et site web.": "Second-year tasks: backups, maintenance, video surveillance, security and website.",
+        "Attestation de stage SIO1": "SIO1 internship certificate",
+        "Attestation officielle de première année.": "Official first-year certificate.",
+        "Attestation de stage SIO2": "SIO2 internship certificate",
+        "Attestation officielle de deuxième année.": "Official second-year certificate.",
+        "Haute disponibilité - Heartbeat, DRBD, Apache": "High availability - Heartbeat, DRBD, Apache",
+        "Cluster Linux, réplication DRBD, IP virtuelle Heartbeat et tests de bascule.": "Linux cluster, DRBD replication, Heartbeat virtual IP and failover tests.",
+        "Nagios Core sous Docker": "Nagios Core under Docker",
+        "Déploiement d'une supervision avec Docker, configuration et vérification du service.": "Monitoring deployment with Docker, configuration and service checks.",
+        "Active Directory - comptes et groupes": "Active Directory - accounts and groups",
+        "OU, comptes, groupes, dossiers personnels, profils itinérants et droits.": "OUs, accounts, groups, personal folders, roaming profiles and permissions.",
+        "Client Linux intégré au domaine AD": "Linux client integrated into the AD domain",
+        "Intégration Ubuntu au domaine Active Directory avec DNS, realm et tests.": "Ubuntu integration into the Active Directory domain with DNS, realm and tests.",
+        "MariaDB intégré au domaine AD": "MariaDB integrated into the AD domain",
+        "Serveur Ubuntu/MariaDB relié au domaine AD avec configuration système et PAM.": "Ubuntu/MariaDB server connected to the AD domain with system and PAM configuration.",
+        "pfSense - VPN OpenVPN": "pfSense - OpenVPN VPN",
+        "Autorité de certification, serveur OpenVPN, règles firewall et client VPN.": "Certificate authority, OpenVPN server, firewall rules and VPN client.",
+        "FTP sécurisé - ProFTPD SSL/TLS": "Secure FTP - ProFTPD SSL/TLS",
+        "Serveur FTP sécurisé, certificats TLS, restriction utilisateur et tests FileZilla.": "Secure FTP server, TLS certificates, user restrictions and FileZilla tests.",
+        "Mission E - Snort": "Mission E - Snort",
+        "Détection, analyse et documentation autour de Snort.": "Detection, analysis and documentation around Snort.",
+        "Veille IA 2026 - agents et cybersécurité": "AI Watch 2026 - agents and cybersecurity",
+        "Actualité IA : agents, outils utilisés, impact SISR et risques cyber.": "AI news: agents, tools used, SISR impact and cyber risks.",
+        "CV professionnel pour présenter la formation, les stages et les compétences.": "Professional CV presenting training, internships and skills."
+      },
+      es: {
+        "Accueil": "Inicio",
+        "Parcours": "Trayectoria",
+        "Compétences": "Competencias",
+        "Réalisations": "Proyectos",
+        "Veille": "Vigilancia",
+        "Documents": "Documentos",
+        "Contact": "Contacto",
+        "Thème": "Tema",
+        "Menu": "Menú",
+        "Systèmes,": "Sistemas,",
+        "réseaux et": "redes y",
+        "cybersécurité": "ciberseguridad",
+        "Cybersécurité": "Ciberseguridad",
+        "Services réseau": "Servicios de red",
+        "Documentation E5": "Documentación E5",
+        "Voir les compétences": "Ver competencias",
+        "Prévisualiser le CV": "Previsualizar CV",
+        "Télécharger le CV": "Descargar CV",
+        "documents intégrés": "documentos integrados",
+        "compétences E5": "competencias E5",
+        "infrastructure et sécurité": "infraestructura y seguridad",
+        "PowerShell / Profil / André Théo": "PowerShell / Perfil / Théo André",
+        "CV et annexe E5 restent disponibles en aperçu.": "El CV y el anexo E5 siguen disponibles en vista previa.",
+        "Stack SISR": "Stack SISR",
+        "Les environnements que j'ai travaillés": "Entornos que he trabajado",
+        "Les logos tournent ici dans une zone dédiée, pleine largeur, pour montrer rapidement les outils vus en TP, en stage et dans les procédures.": "Los logos se mueven aquí en una zona dedicada de ancho completo para mostrar rápidamente las herramientas usadas en prácticas, prácticas de empresa y procedimientos.",
+        "Une progression orientée SISR": "Una progresión orientada a SISR",
+        "Le parcours met en avant les périodes de stage, les travaux pratiques et l'objectif professionnel : devenir opérationnel sur le support, les systèmes, les réseaux et la cybersécurité.": "La trayectoria destaca las prácticas, los trabajos prácticos y el objetivo profesional: ser operativo en soporte, sistemas, redes y ciberseguridad.",
+        "Compétences + TP": "Competencias + prácticas",
+        "Chaque compétence montre directement les preuves": "Cada competencia muestra directamente sus evidencias",
+        "Les logos restent fixes pour identifier rapidement les outils travaillés. Chaque compétence garde ses TP associés, avec aperçu PDF uniquement quand on clique.": "Los logos quedan fijos para identificar rápido las herramientas. Cada competencia conserva sus prácticas asociadas, con vista previa PDF solo al hacer clic.",
+        "Ce que j'ai vraiment manipulé": "Lo que realmente he manipulado",
+        "Une synthèse courte des réalisations techniques pour avoir une vue claire avant d'ouvrir les procédures.": "Un resumen corto de los trabajos técnicos para tener una vista clara antes de abrir los procedimientos.",
+        "Veille informatique": "Vigilancia informática",
+        "Veille IA 2026 : agents, outils et cybersécurité": "Vigilancia IA 2026: agentes, herramientas y ciberseguridad",
+        "La veille est présentée comme un vrai dossier de travail : actualités récentes, outils utilisés, impact SISR et PDF propre pour l'oral.": "La vigilancia se presenta como un verdadero dossier de trabajo: noticias recientes, herramientas usadas, impacto SISR y PDF limpio para la presentación oral.",
+        "Veille informatique / IA / PDF": "Vigilancia informática / IA / PDF",
+        "Sujet 2026": "Tema 2026",
+        "Les agents IA deviennent des outils de travail": "Los agentes de IA se convierten en herramientas de trabajo",
+        "La veille suit l'évolution des assistants IA capables d'agir dans un environnement de travail : génération de code, automatisation bureautique, supervision des agents et enjeux de sécurité pour les systèmes d'information.": "La vigilancia sigue la evolución de asistentes de IA capaces de actuar en un entorno de trabajo: generación de código, automatización ofimática, supervisión de agentes y retos de seguridad para los sistemas de información.",
+        "1. Sources officielles": "1. Fuentes oficiales",
+        "OpenAI, Microsoft, Google Cloud, Anthropic et ANSSI pour éviter les infos floues ou non vérifiées.": "OpenAI, Microsoft, Google Cloud, Anthropic y ANSSI para evitar información imprecisa o no verificada.",
+        "2. Outils utilisés": "2. Herramientas usadas",
+        "Navigateur web, recherche ciblée, Codex pour organiser les notes et export PDF local.": "Navegador web, búsqueda dirigida, Codex para organizar notas y exportación PDF local.",
+        "3. Angle SISR": "3. Enfoque SISR",
+        "Observer ce que l'IA change pour le support, l'administration, l'automatisation et la cybersécurité.": "Observar lo que la IA cambia para soporte, administración, automatización y ciberseguridad.",
+        "4. Analyse critique": "4. Análisis crítico",
+        "Garder une logique de contrôle humain, de permissions, de traçabilité et de protection des données.": "Mantener una lógica de control humano, permisos, trazabilidad y protección de datos.",
+        "Codex et Claude Code : agents de développement": "Codex y Claude Code: agentes de desarrollo",
+        "Copilot et Gemini Enterprise : agents en entreprise": "Copilot y Gemini Enterprise: agentes en empresa",
+        "ANSSI : approche par les risques cyber liés à l'IA": "ANSSI: enfoque basado en riesgos cibernéticos ligados a la IA",
+        "Document associé": "Documento asociado",
+        "Veille IA 2026": "Vigilancia IA 2026",
+        "Document rédigé pour présenter clairement les tendances IA, les outils suivis et les impacts pour un profil SISR.": "Documento redactado para presentar claramente tendencias de IA, herramientas seguidas e impactos para un perfil SISR.",
+        "PDF de veille actualisé, sans aperçu vide dans la page.": "PDF de vigilancia actualizado, sin vista previa vacía en la página.",
+        "Prévisualiser la veille": "Previsualizar vigilancia",
+        "Télécharger": "Descargar",
+        "Un classeur clair pour retrouver les PDF": "Un archivador claro para encontrar los PDF",
+        "Les documents sont rangés par familles : E5, stages, patrimoine, services et cybersécurité. Les TP restent aussi visibles dans les compétences, mais ici tu as le sommaire général.": "Los documentos están ordenados por familias: E5, prácticas, patrimonio, servicios y ciberseguridad. Las prácticas también aparecen en competencias, pero aquí está el índice general.",
+        "Prévisualiser l'annexe E5": "Previsualizar anexo E5",
+        "Télécharger l'annexe": "Descargar anexo",
+        "Échanger sur une opportunité informatique": "Hablar sobre una oportunidad informática",
+        "Je peux présenter mes TP, mes stages et mon profil SISR de manière claire en entretien. Le formulaire prépare directement un mail avec les informations utiles.": "Puedo presentar claramente mis prácticas, mis periodos de empresa y mi perfil SISR en una entrevista. El formulario prepara directamente un correo con la información útil.",
+        "Écrire": "Escribir",
+        "Profil": "Perfil",
+        "BTS SIO SISR - support, systèmes, réseaux": "BTS SIO SISR - soporte, sistemas, redes",
+        "Dossier": "Dossier",
+        "CV, stages, annexe E5 et procédures TP": "CV, prácticas, anexo E5 y procedimientos",
+        "Nom": "Nombre",
+        "Sujet": "Asunto",
+        "Message": "Mensaje",
+        "Préparer le mail": "Preparar correo",
+        "Retour en haut": "Volver arriba",
+        "Aperçu PDF": "Vista previa PDF",
+        "Ouvrir": "Abrir",
+        "Aperçu PDF indisponible dans ce navigateur.": "Vista previa PDF no disponible en este navegador.",
+        "Ouvrir le PDF dans un nouvel onglet": "Abrir el PDF en una nueva pestaña",
+        "Ambiance visuelle": "Ambiente visual",
+        "Choix du thème": "Elegir tema",
+        "Change tout le mood du portfolio sans recharger la page.": "Cambia todo el ambiente del portfolio sin recargar la página.",
+        "Fermer les thèmes": "Cerrar temas",
+        "noir, violet, orange, glow assumé": "negro, violeta, naranja, brillo marcado",
+        "vert terminal, pluie de données": "verde terminal, lluvia de datos",
+        "violet électrique, rose, bleu plasma": "violeta eléctrico, rosa, azul plasma",
+        "clair, premium, lisible pour recruteur": "claro, premium, legible para reclutadores",
+        "clair, rapide, animations allégées": "claro, rápido, animaciones ligeras",
+        "rouge, noir, intrusion contrôlée": "rojo, negro, intrusión controlada",
+        "sombre, calme, sérieux pour présenter": "oscuro, tranquilo, serio para presentar",
+        "Compétence": "Competencia",
+        "PDF associés": "PDF asociados",
+        "Voir les preuves": "Ver evidencias",
+        "Classeur": "Archivador",
+        "Tous": "Todos",
+        "Tous les documents": "Todos los documentos",
+        "Sommaire complet du dossier.": "Índice completo del dossier.",
+        "E5 et présentation": "E5 y presentación",
+        "Les documents à ouvrir en priorité pour l'oral.": "Documentos prioritarios para abrir en la presentación oral.",
+        "Stages": "Prácticas",
+        "Rapports et attestations des deux périodes de stage.": "Informes y certificados de los dos periodos de prácticas.",
+        "Patrimoine informatique": "Patrimonio informático",
+        "TP autour d'Active Directory et de l'intégration au domaine.": "Prácticas sobre Active Directory e integración al dominio.",
+        "Services et supervision": "Servicios y supervisión",
+        "Déploiement, supervision et disponibilité des services.": "Despliegue, supervisión y disponibilidad de servicios.",
+        "VPN, FTP sécurisé et détection.": "VPN, FTP seguro y detección.",
+        "Aperçu": "Vista previa",
+        "Début du BTS SIO": "Inicio del BTS SIO",
+        "Découverte du support, des bases réseau, du développement, des bases de données et des premiers environnements systèmes.": "Descubrimiento del soporte, bases de red, desarrollo, bases de datos y primeros entornos de sistemas.",
+        "Stage de première année": "Prácticas de primer año",
+        "Première immersion professionnelle avec des missions autour du réseau, de la cybersécurité, de WordPress et du matériel.": "Primera inmersión profesional con misiones sobre red, ciberseguridad, WordPress y material.",
+        "Spécialisation SISR": "Especialización SISR",
+        "Approfondissement Active Directory, Linux, services réseau, supervision, VPN, sauvegarde et procédures techniques.": "Profundización en Active Directory, Linux, servicios de red, supervisión, VPN, copias de seguridad y procedimientos técnicos.",
+        "Stage de deuxième année": "Prácticas de segundo año",
+        "Missions orientées exploitation : sauvegardes OneDrive, maintenance Windows, vidéosurveillance, sécurité et site web.": "Misiones orientadas a explotación: copias OneDrive, mantenimiento Windows, videovigilancia, seguridad y sitio web.",
+        "Objectif": "Objetivo",
+        "Entrer dans le monde professionnel": "Entrar en el mundo profesional",
+        "Après le BTS, l'objectif est de travailler dans l'informatique : support, systèmes, réseaux ou cybersécurité.": "Después del BTS, el objetivo es trabajar en informática: soporte, sistemas, redes o ciberseguridad.",
+        "Gérer le patrimoine informatique": "Gestionar el patrimonio informático",
+        "Structurer les ressources, administrer les comptes, organiser les droits et documenter l'environnement.": "Estructurar recursos, administrar cuentas, organizar permisos y documentar el entorno.",
+        "Répondre aux incidents et aux demandes": "Responder a incidencias y solicitudes",
+        "Diagnostiquer, intervenir, sécuriser l'usage quotidien et rendre compte des actions effectuées.": "Diagnosticar, intervenir, proteger el uso diario y reportar las acciones realizadas.",
+        "Développer la présence en ligne": "Desarrollar la presencia en línea",
+        "Participer à la mise en valeur d'une organisation avec un contenu clair, cohérent et exploitable.": "Participar en la valorización de una organización con contenido claro, coherente y utilizable.",
+        "Travailler en mode projet": "Trabajar en modo proyecto",
+        "Organiser les étapes, tester les configurations, produire des procédures et synthétiser les résultats.": "Organizar etapas, probar configuraciones, producir procedimientos y sintetizar resultados.",
+        "Mettre à disposition un service informatique": "Poner a disposición un servicio informático",
+        "Installer, configurer, superviser et sécuriser des services utiles aux utilisateurs.": "Instalar, configurar, supervisar y proteger servicios útiles para usuarios.",
+        "Organiser son développement professionnel": "Organizar el desarrollo profesional",
+        "Suivre une veille, valoriser ses expériences et préparer une présentation professionnelle propre.": "Seguir una vigilancia, valorar experiencias y preparar una presentación profesional limpia.",
+        "Active Directory et gestion des comptes": "Active Directory y gestión de cuentas",
+        "Organisation des OU, groupes, comptes et droits pour un environnement Windows Server.": "Organización de OU, grupos, cuentas y permisos para un entorno Windows Server.",
+        "Domaine, comptes et droits": "Dominio, cuentas y permisos",
+        "Intégration Linux au domaine": "Integración Linux al dominio",
+        "Intégration d'un client Ubuntu et d'un serveur MariaDB dans le domaine Active Directory.": "Integración de un cliente Ubuntu y un servidor MariaDB en el dominio Active Directory.",
+        "Jonction domaine Linux": "Unión Linux al dominio",
+        "Supervision Nagios Core": "Supervisión Nagios Core",
+        "Mise en place d'une supervision sous Docker pour contrôler l'état des services.": "Implementación de supervisión con Docker para controlar el estado de los servicios.",
+        "Tableau de supervision": "Panel de supervisión",
+        "Haute disponibilité Linux": "Alta disponibilidad Linux",
+        "Cluster avec DRBD, Heartbeat et Apache pour tester une continuité de service.": "Clúster con DRBD, Heartbeat y Apache para probar continuidad de servicio.",
+        "Cluster et bascule": "Clúster y conmutación",
+        "VPN OpenVPN sur pfSense": "VPN OpenVPN en pfSense",
+        "Configuration des certificats, du serveur VPN, des règles firewall et de la connexion client.": "Configuración de certificados, servidor VPN, reglas firewall y conexión cliente.",
+        "Tunnel VPN sécurisé": "Túnel VPN seguro",
+        "Sécurisation FTP TLS et Snort": "Seguridad FTP TLS y Snort",
+        "Mise en place de ProFTPD avec TLS et mission de détection/analyse autour de Snort.": "Implementación de ProFTPD con TLS y misión de detección/análisis con Snort.",
+        "Transfert chiffré et IDS": "Transferencia cifrada e IDS",
+        "Patrimoine": "Patrimonio",
+        "Systèmes": "Sistemas",
+        "Services": "Servicios",
+        "Réseaux": "Redes",
+        "Sécurité": "Seguridad",
+        "Technicien IT": "Técnico IT",
+        "Droits": "Permisos",
+        "Maintenance": "Mantenimiento",
+        "Support": "Soporte",
+        "Support IT": "Soporte IT",
+        "Intelligence artificielle": "Inteligencia artificial",
+        "Annexe E5": "Anexo E5",
+        "CV Théo André 2025": "CV Théo André 2025",
+        "Annexe E5 - Tableau de synthèse": "Anexo E5 - tabla de síntesis",
+        "Tableau de synthèse des situations professionnelles et compétences.": "Tabla de síntesis de situaciones profesionales y competencias.",
+        "Rapport de stage SIO1 - Centres Sociaux": "Informe de prácticas SIO1 - Centres Sociaux",
+        "Missions de première année : réseau, cybersécurité, WordPress, matériel et documentation.": "Misiones de primer año: red, ciberseguridad, WordPress, material y documentación.",
+        "Rapport de stage SIO2 - Roulez Jeunesse": "Informe de prácticas SIO2 - Roulez Jeunesse",
+        "Missions de deuxième année : sauvegardes, maintenance, vidéosurveillance, sécurité et site web.": "Misiones de segundo año: copias de seguridad, mantenimiento, videovigilancia, seguridad y sitio web.",
+        "Attestation de stage SIO1": "Certificado de prácticas SIO1",
+        "Attestation officielle de première année.": "Certificado oficial de primer año.",
+        "Attestation de stage SIO2": "Certificado de prácticas SIO2",
+        "Attestation officielle de deuxième année.": "Certificado oficial de segundo año.",
+        "Haute disponibilité - Heartbeat, DRBD, Apache": "Alta disponibilidad - Heartbeat, DRBD, Apache",
+        "Cluster Linux, réplication DRBD, IP virtuelle Heartbeat et tests de bascule.": "Clúster Linux, replicación DRBD, IP virtual Heartbeat y pruebas de conmutación.",
+        "Nagios Core sous Docker": "Nagios Core con Docker",
+        "Déploiement d'une supervision avec Docker, configuration et vérification du service.": "Despliegue de supervisión con Docker, configuración y verificación del servicio.",
+        "Active Directory - comptes et groupes": "Active Directory - cuentas y grupos",
+        "OU, comptes, groupes, dossiers personnels, profils itinérants et droits.": "OU, cuentas, grupos, carpetas personales, perfiles itinerantes y permisos.",
+        "Client Linux intégré au domaine AD": "Cliente Linux integrado al dominio AD",
+        "Intégration Ubuntu au domaine Active Directory avec DNS, realm et tests.": "Integración Ubuntu al dominio Active Directory con DNS, realm y pruebas.",
+        "MariaDB intégré au domaine AD": "MariaDB integrado al dominio AD",
+        "Serveur Ubuntu/MariaDB relié au domaine AD avec configuration système et PAM.": "Servidor Ubuntu/MariaDB conectado al dominio AD con configuración del sistema y PAM.",
+        "pfSense - VPN OpenVPN": "pfSense - VPN OpenVPN",
+        "Autorité de certification, serveur OpenVPN, règles firewall et client VPN.": "Autoridad de certificación, servidor OpenVPN, reglas firewall y cliente VPN.",
+        "FTP sécurisé - ProFTPD SSL/TLS": "FTP seguro - ProFTPD SSL/TLS",
+        "Serveur FTP sécurisé, certificats TLS, restriction utilisateur et tests FileZilla.": "Servidor FTP seguro, certificados TLS, restricción de usuario y pruebas FileZilla.",
+        "Mission E - Snort": "Misión E - Snort",
+        "Détection, analyse et documentation autour de Snort.": "Detección, análisis y documentación sobre Snort.",
+        "Veille IA 2026 - agents et cybersécurité": "Vigilancia IA 2026 - agentes y ciberseguridad",
+        "Actualité IA : agents, outils utilisés, impact SISR et risques cyber.": "Actualidad IA: agentes, herramientas usadas, impacto SISR y riesgos cibernéticos.",
+        "CV professionnel pour présenter la formation, les stages et les compétences.": "CV profesional para presentar la formación, las prácticas y las competencias."
+      }
+    };
+
+    const journey = [
+      { year: "2023", title: "Début du BTS SIO", desc: "Découverte du support, des bases réseau, du développement, des bases de données et des premiers environnements systèmes.", tags: ["BTS SIO", "Support", "Réseaux"] },
+      { year: "2024", title: "Stage de première année", desc: "Première immersion professionnelle avec des missions autour du réseau, de la cybersécurité, de WordPress et du matériel.", tags: ["Stage SIO1", "Documentation", "Cybersécurité"] },
+      { year: "2024-2025", title: "Spécialisation SISR", desc: "Approfondissement Active Directory, Linux, services réseau, supervision, VPN, sauvegarde et procédures techniques.", tags: ["SISR", "AD DS", "Linux", "Services"] },
+      { year: "2025", title: "Stage de deuxième année", desc: "Missions orientées exploitation : sauvegardes OneDrive, maintenance Windows, vidéosurveillance, sécurité et site web.", tags: ["Stage SIO2", "Maintenance", "Sécurité"] },
+      { year: "Objectif", title: "Entrer dans le monde professionnel", desc: "Après le BTS, l'objectif est de travailler dans l'informatique : support, systèmes, réseaux ou cybersécurité.", tags: ["Technicien IT", "Systèmes", "Réseaux"] }
+    ];
+
+    const competencies = [
+      {
+        code: "B1.1",
+        title: "Gérer le patrimoine informatique",
+        accent: "green",
+        desc: "Structurer les ressources, administrer les comptes, organiser les droits et documenter l'environnement.",
+        logos: ["windows", "ad", "gpo", "ubuntu", "mariadb"],
+        outcomes: ["Création d'OU, comptes et groupes", "Intégration Linux au domaine", "Gestion des droits et des services liés au domaine"],
+        docs: ["ad", "linux-ad", "mariadb-ad"]
+      },
+      {
+        code: "B1.2",
+        title: "Répondre aux incidents et aux demandes",
+        accent: "blue",
+        desc: "Diagnostiquer, intervenir, sécuriser l'usage quotidien et rendre compte des actions effectuées.",
+        logos: ["support", "windows", "linux", "pdf"],
+        outcomes: ["Maintenance et support utilisateur", "Documentation des interventions", "Mise en pratique pendant les stages"],
+        docs: ["stage-sio1", "stage-sio2", "attestation-sio1", "attestation-sio2"]
+      },
+      {
+        code: "B1.3",
+        title: "Développer la présence en ligne",
+        accent: "coral",
+        desc: "Participer à la mise en valeur d'une organisation avec un contenu clair, cohérent et exploitable.",
+        logos: ["wordpress", "html", "css", "js"],
+        outcomes: ["Travail sur WordPress en stage", "Mise en forme d'un portfolio professionnel", "Présentation lisible des preuves"],
+        docs: ["stage-sio1", "stage-sio2"]
+      },
+      {
+        code: "B1.4",
+        title: "Travailler en mode projet",
+        accent: "gold",
+        desc: "Organiser les étapes, tester les configurations, produire des procédures et synthétiser les résultats.",
+        logos: ["e5", "pdf", "docker", "apache"],
+        outcomes: ["Procédures étape par étape", "Tests de validation", "Synthèse E5 utilisable à l'oral"],
+        docs: ["annexe-e5", "haute-dispo", "nagios"]
+      },
+      {
+        code: "B1.5",
+        title: "Mettre à disposition un service informatique",
+        accent: "violet",
+        desc: "Installer, configurer, superviser et sécuriser des services utiles aux utilisateurs.",
+        logos: ["docker", "nagios", "apache", "pfsense", "openvpn", "filezilla"],
+        outcomes: ["Supervision Nagios", "VPN OpenVPN sur pfSense", "FTP sécurisé TLS et haute disponibilité"],
+        docs: ["haute-dispo", "nagios", "openvpn", "ftp"]
+      },
+      {
+        code: "B1.6",
+        title: "Organiser son développement professionnel",
+        accent: "green",
+        desc: "Suivre une veille, valoriser ses expériences et préparer une présentation professionnelle propre.",
+        logos: ["ai", "openai", "microsoft", "google", "anssi"],
+        outcomes: ["Veille IA 2026", "CV et attestations regroupés", "Mise en avant d'un profil SISR"],
+        docs: ["cv", "veille", "annexe-e5", "snort"]
+      }
+    ];
+
+    const projects = [
+      { title: "Active Directory et gestion des comptes", area: "Patrimoine", desc: "Organisation des OU, groupes, comptes et droits pour un environnement Windows Server.", tags: ["Windows Server", "AD DS", "GPO", "Droits"], logos: ["windows", "ad", "gpo"], visual: "Domaine, comptes et droits" },
+      { title: "Intégration Linux au domaine", area: "Systèmes", desc: "Intégration d'un client Ubuntu et d'un serveur MariaDB dans le domaine Active Directory.", tags: ["Ubuntu", "Realm", "DNS", "MariaDB"], logos: ["ubuntu", "linux", "mariadb", "ad"], visual: "Jonction domaine Linux" },
+      { title: "Supervision Nagios Core", area: "Services", desc: "Mise en place d'une supervision sous Docker pour contrôler l'état des services.", tags: ["Nagios", "Docker", "Supervision"], logos: ["nagios", "docker", "linux"], visual: "Tableau de supervision" },
+      { title: "Haute disponibilité Linux", area: "Services", desc: "Cluster avec DRBD, Heartbeat et Apache pour tester une continuité de service.", tags: ["DRBD", "Heartbeat", "Apache"], logos: ["linux", "apache", "ubuntu"], visual: "Cluster et bascule" },
+      { title: "VPN OpenVPN sur pfSense", area: "Cybersécurité", desc: "Configuration des certificats, du serveur VPN, des règles firewall et de la connexion client.", tags: ["pfSense", "OpenVPN", "Firewall"], logos: ["pfsense", "openvpn", "kali"], visual: "Tunnel VPN sécurisé" },
+      { title: "Sécurisation FTP TLS et Snort", area: "Cybersécurité", desc: "Mise en place de ProFTPD avec TLS et mission de détection/analyse autour de Snort.", tags: ["ProFTPD", "TLS", "Snort", "Kali"], logos: ["proftpd", "filezilla", "snort", "kali"], visual: "Transfert chiffré et IDS" }
+    ];
+
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => Array.from(document.querySelectorAll(selector));
+    const originalTextNodes = new WeakMap();
+
+    function logoTile(key) {
+      const logo = logos[key] || { label: key, fallback: key.slice(0, 3).toUpperCase() };
+      const img = logo.src ? `<img src="${logo.src}" alt="" loading="lazy" onerror="this.remove()">` : "";
+      return `
+        <span class="tech-logo" title="${logo.label}">
+          <span class="logo-icon" data-fallback="${logo.fallback}">${img}</span>
+          <span>${logo.label}</span>
+        </span>
+      `;
+    }
+
+    function logoIconOnly(key, index = 0) {
+      const logo = logos[key] || { label: key, fallback: key.slice(0, 3).toUpperCase() };
+      const img = logo.src ? `<img src="${logo.src}" alt="" loading="lazy" onerror="this.remove()">` : "";
+      return `
+        <span class="visual-node" style="--i:${index}" title="${logo.label}">
+          <span class="logo-icon" data-fallback="${logo.fallback}">${img}</span>
+        </span>
+      `;
+    }
+
+    function projectVisual(project) {
+      return `
+        <div class="project-visual">
+          <div class="visual-logo-pack">${project.logos.slice(0, 4).map(logoIconOnly).join("")}</div>
+          <span class="visual-caption">${project.visual}</span>
+        </div>
+      `;
+    }
+
+    function logoStrip(keys) {
+      const row = keys.map(logoTile).join("");
+      return `<div class="logo-strip"><div class="logo-track">${row}</div></div>`;
+    }
+
+    function chipList(items) {
+      return items.map(item => `<span class="tag">${item}</span>`).join("");
+    }
+
+    function docActions(id, dark = false) {
+      const doc = documents[id];
+      return `
+        <div class="proof-actions">
+          <button class="btn btn-small ${dark ? "btn-dark" : ""}" type="button" data-preview="${id}">Aperçu</button>
+          <a class="btn btn-small" href="${doc.file}" download>PDF</a>
+        </div>
+      `;
+    }
+
+    function translatedText(source, lang) {
+      if (lang === "fr") return source;
+      const dictionary = pageTranslations[lang] || {};
+      if (dictionary[source]) return dictionary[source];
+      const pdfLinked = source.match(/^(\d+)\s+PDF associés$/);
+      if (pdfLinked) return lang === "es" ? `${pdfLinked[1]} PDF asociados` : `${pdfLinked[1]} linked PDFs`;
+      const pdfCount = source.match(/^(\d+)\s+PDF$/);
+      if (pdfCount) return lang === "es" ? `${pdfCount[1]} PDF` : `${pdfCount[1]} PDFs`;
+      if (source.includes(" - ")) {
+        return source.split(" - ").map(part => dictionary[part] || part).join(" - ");
+      }
+      return source;
+    }
+
+    function translatePage(lang = currentLang) {
+      document.documentElement.lang = lang;
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+          const parent = node.parentElement;
+          if (!parent || ["SCRIPT", "STYLE", "IFRAME", "OBJECT"].includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
+          if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        if (!originalTextNodes.has(node)) originalTextNodes.set(node, node.nodeValue);
+        const original = originalTextNodes.get(node);
+        const trimmed = original.trim();
+        const leading = original.match(/^\s*/)?.[0] || "";
+        const trailing = original.match(/\s*$/)?.[0] || "";
+        node.nodeValue = `${leading}${translatedText(trimmed, lang)}${trailing}`;
+      }
+
+      applyLocalizedFields(lang);
+    }
+
+    function isDefaultFieldValue(id, value) {
+      return Object.values(translations).some(item => item.placeholders?.[id] === value);
+    }
+
+    function applyLocalizedFields(lang) {
+      const fields = translations[lang]?.placeholders || translations.fr.placeholders;
+      $("#senderName").placeholder = fields.senderName;
+      $("#senderEmail").placeholder = fields.senderEmail;
+      if (isDefaultFieldValue("subject", $("#subject").value)) {
+        $("#subject").value = fields.subject;
+        $("#subject").setAttribute("value", fields.subject);
+      }
+      if (isDefaultFieldValue("message", $("#message").value)) {
+        $("#message").value = fields.message;
+        $("#message").textContent = fields.message;
+      }
+    }
+
+    function renderStackShowcase() {
+      const rowOne = ["windows", "ad", "kali", "pfsense", "openvpn", "ubuntu", "docker", "nagios"];
+      const rowTwo = ["mariadb", "apache", "snort", "filezilla", "linux", "wordpress", "html", "css", "js", "e5"];
+      $("#stackTrackOne").innerHTML = rowOne.map(logoTile).join("") + rowOne.map(logoTile).join("");
+      $("#stackTrackTwo").innerHTML = rowTwo.map(logoTile).join("") + rowTwo.map(logoTile).join("");
+      translatePage(currentLang);
+    }
+
+    function renderTimeline() {
+      $("#timeline").innerHTML = journey.map(item => `
+        <article class="timeline-item">
+          <div class="timeline-year">${item.year}</div>
+          <div>
+            <h3>${item.title}</h3>
+            <p>${item.desc}</p>
+            <div class="project-tags">${chipList(item.tags)}</div>
+          </div>
+        </article>
+      `).join("");
+      translatePage(currentLang);
+    }
+
+    function renderCompetencies() {
+      $("#competenceGrid").innerHTML = competencies.map(item => `
+        <article class="card competence-card" data-accent="${item.accent}">
+          <div class="competence-content">
+            <div class="competence-title">
+              <div>
+                <span class="card-kicker">Compétence</span>
+                <h3>${item.title}</h3>
+              </div>
+              <span class="competence-code">${item.code}</span>
+            </div>
+            <p>${item.desc}</p>
+          </div>
+          ${logoStrip(item.logos)}
+          <div class="competence-mini-footer">
+            <span class="proof-count">${item.docs.length} PDF associés</span>
+            <a class="btn btn-small" href="#documents">Voir les preuves</a>
+          </div>
+        </article>
+      `).join("");
+      translatePage(currentLang);
+    }
+
+    function renderProjects() {
+      $("#projectGrid").innerHTML = projects.map(project => `
+        <article class="card project-card">
+          ${projectVisual(project)}
+          <div>
+            <span class="card-kicker">${project.area}</span>
+            <h3>${project.title}</h3>
+            <p>${project.desc}</p>
+            <div class="project-tags">${chipList(project.tags)}</div>
+          </div>
+        </article>
+      `).join("");
+      translatePage(currentLang);
+    }
+
+    function renderDocumentGroups() {
+      const visibleCategories = activeDocumentCategory === "all"
+        ? documentCategories.filter(category => category.id !== "all")
+        : documentCategories.filter(category => category.id === activeDocumentCategory);
+
+      $("#documentFilters").innerHTML = documentCategories.map(category => `
+        <button class="document-filter ${category.id === activeDocumentCategory ? "active" : ""}" type="button" data-document-filter="${category.id}">
+          ${category.title.replace("Tous les documents", "Tous")}
+        </button>
+      `).join("");
+
+      $("#documentGroups").innerHTML = visibleCategories.map(category => `
+        <article class="doc-group">
+          <div class="doc-group-head">
+            <div>
+              <span class="card-kicker">Classeur</span>
+              <h3>${category.title}</h3>
+              <p style="margin-bottom:0">${category.desc}</p>
+            </div>
+            <span class="doc-count">${category.docs.length} PDF</span>
+          </div>
+          <div class="doc-table">
+            ${category.docs.map(id => {
+              const doc = documents[id];
+              return `
+                <div class="doc-line">
+                  <div>
+                    <strong>${doc.title}</strong>
+                    <span>${doc.type} - ${doc.desc}</span>
+                  </div>
+                  <div class="doc-actions">${docActions(id, true)}</div>
+                </div>
+              `;
+            }).join("")}
+          </div>
+        </article>
+      `).join("");
+      translatePage(currentLang);
+    }
+
+    function pdfUrl(file) {
+      return `${file}#view=FitH&page=1`;
+    }
+
+    function pdfEmbed(doc) {
+      const url = pdfUrl(doc.file);
+      return `
+        <object class="pdf-object" data="${url}" type="application/pdf">
+          <iframe src="${url}" title="Aperçu PDF - ${doc.title}" loading="lazy"></iframe>
+          <div class="pdf-fallback">
+            <div>
+              <strong>Aperçu PDF indisponible dans ce navigateur.</strong><br>
+              <a href="${doc.file}" target="_blank" rel="noopener">Ouvrir le PDF dans un nouvel onglet</a>
+            </div>
+          </div>
+        </object>
+      `;
+    }
+
+    function openPreview(id) {
+      const doc = documents[id];
+      if (!doc) return;
+      $("#modalTitle").textContent = doc.title;
+      $("#modalDownload").href = doc.file;
+      $("#modalExternal").href = doc.file;
+      $("#modalContent").innerHTML = pdfEmbed(doc);
+      translatePage(currentLang);
+      $("#pdfModal").classList.add("open");
+      $("#pdfModal").setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      $("#modalClose").focus();
+    }
+
+    function closePreview() {
+      $("#pdfModal").classList.remove("open");
+      $("#pdfModal").setAttribute("aria-hidden", "true");
+      $("#modalContent").innerHTML = "";
+      document.body.classList.remove("modal-open");
+    }
+
+    function closeMenu() {
+      $("#siteNav").classList.remove("nav-open");
+      $("#navToggle").setAttribute("aria-expanded", "false");
+    }
+
+    function showThemeToast(themeId) {
+      const toast = $("#themeToast");
+      const title = toast.querySelector("strong");
+      const text = toast.querySelector("span");
+      const messages = {
+        fr: {
+          liteTitle: "Mode lite activé",
+          liteText: "Interface claire, animations allégées, lecture plus rapide pour l'oral.",
+          normalTitle: "Thème normal activé",
+          normalText: "Animations, logos, veille IA et cartes compactes restent actifs."
+        },
+        en: {
+          liteTitle: "Lite mode enabled",
+          liteText: "Clear interface, lighter animations and faster reading for the presentation.",
+          normalTitle: "Standard theme enabled",
+          normalText: "Animations, logos, AI watch and compact cards remain active."
+        },
+        es: {
+          liteTitle: "Modo lite activado",
+          liteText: "Interfaz clara, animaciones ligeras y lectura más rápida para la presentación.",
+          normalTitle: "Tema normal activado",
+          normalText: "Animaciones, logos, vigilancia IA y tarjetas compactas siguen activos."
+        }
+      };
+      const copy = messages[currentLang] || messages.fr;
+      title.textContent = themeId === "lite" ? copy.liteTitle : copy.normalTitle;
+      text.textContent = themeId === "lite" ? copy.liteText : copy.normalText;
+      toast.classList.remove("show");
+      void toast.offsetWidth;
+      toast.classList.add("show");
+      clearTimeout(themeToastTimer);
+      themeToastTimer = setTimeout(() => toast.classList.remove("show"), 4200);
+    }
+
+    function applyTheme(themeId, announce = true) {
+      const selected = themes.some(theme => theme.id === themeId) ? themeId : "luxury";
+      document.body.dataset.theme = selected;
+      localStorage.setItem("portfolio-theme", selected);
+      $$(".theme-choice").forEach(button => {
+        button.classList.toggle("active", button.dataset.themeChoice === selected);
+      });
+      if (announce) showThemeToast(selected);
+    }
+
+    function setupTheme() {
+      $("#themeMenu").innerHTML = `
+        <div class="theme-panel-head">
+          <div>
+            <span>Ambiance visuelle</span>
+            <h3>Choix du thème</h3>
+            <p>Change tout le mood du portfolio sans recharger la page.</p>
+          </div>
+          <button class="theme-close" type="button" data-theme-close aria-label="Fermer les thèmes">x</button>
+        </div>
+        ${themes.map(theme => `
+        <button class="theme-choice" type="button" data-theme-choice="${theme.id}">
+          <span class="theme-preview" style="--preview-a:${theme.colors[0]};--preview-b:${theme.colors[1]};--preview-c:${theme.colors[2]}"></span>
+          <span>
+            <span class="theme-label">
+              <strong>${theme.label}</strong>
+              <small>${theme.desc}</small>
+            </span>
+          </span>
+        </button>
+      `).join("")}`;
+
+      const picker = $("#themePicker");
+      const toggle = $("#themeToggle");
+
+      toggle.addEventListener("click", event => {
+        event.stopPropagation();
+        const open = picker.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", String(open));
+      });
+
+      $("#themeMenu").addEventListener("click", event => {
+        if (event.target.closest("[data-theme-close]")) {
+          picker.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+          return;
+        }
+        const choice = event.target.closest("[data-theme-choice]");
+        if (!choice) return;
+        applyTheme(choice.dataset.themeChoice);
+        picker.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+
+      document.addEventListener("click", event => {
+        if (!picker.contains(event.target)) {
+          picker.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      applyTheme(localStorage.getItem("portfolio-theme") || "luxury", false);
+      translatePage(currentLang);
+    }
+
+    function setupDocuments() {
+      $("#documentFilters").addEventListener("click", event => {
+        const filter = event.target.closest("[data-document-filter]");
+        if (!filter) return;
+        activeDocumentCategory = filter.dataset.documentFilter;
+        renderDocumentGroups();
+      });
+    }
+
+    function setupNavigation() {
+      const nav = $("#siteNav");
+      const toggle = $("#navToggle");
+
+      toggle.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("nav-open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      document.addEventListener("click", event => {
+        if (!nav.contains(event.target)) closeMenu();
+      });
+
+      $$("#navLinks a").forEach(link => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      const updateActiveLink = () => {
+        const links = $$("#navLinks a");
+        let current = "#accueil";
+        links.forEach(link => {
+          const section = document.querySelector(link.getAttribute("href"));
+          if (section && section.offsetTop - 130 <= window.scrollY) {
+            current = link.getAttribute("href");
+          }
+        });
+        links.forEach(link => link.classList.toggle("active", link.getAttribute("href") === current));
+      };
+
+      const updateProgress = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        $("#pageProgress").style.width = `${max > 0 ? (window.scrollY / max) * 100 : 0}%`;
+      };
+
+      window.addEventListener("scroll", () => {
+        updateActiveLink();
+        updateProgress();
+      }, { passive: true });
+
+      updateActiveLink();
+      updateProgress();
+    }
+
+    function renderTerminal(lang) {
+      const current = translations[lang] || translations.fr;
+      $("#heroLead").textContent = current.heroLead;
+      $("#profileTerminal").innerHTML = current.terminal.map((line, index) => {
+        const [prompt, text] = line;
+        const promptHtml = prompt ? `<span class="terminal-prompt">${prompt}</span> ` : "";
+        const commandClass = prompt ? "terminal-command" : "";
+        const caret = index === current.terminal.length - 1 ? " terminal-caret" : "";
+        return `<p class="terminal-line${caret}" style="--delay:${index + 1}">${promptHtml}<span class="${commandClass}">${text}</span></p>`;
+      }).join("");
+    }
+
+    function setupClockAndLanguage() {
+      const updateClock = () => {
+        const locale = { fr: "fr-FR", en: "en-GB", es: "es-ES" }[currentLang] || "fr-FR";
+        $("#liveClock").textContent = new Intl.DateTimeFormat(locale, {
+          hour: "2-digit",
+          minute: "2-digit"
+        }).format(new Date());
+      };
+      updateClock();
+      setInterval(updateClock, 30000);
+
+      $("#languageSwitch").addEventListener("click", event => {
+        const button = event.target.closest("[data-lang]");
+        if (!button) return;
+        const lang = button.dataset.lang;
+        currentLang = lang;
+        $$(".lang-btn").forEach(item => item.classList.toggle("active", item === button));
+        renderTerminal(lang);
+        translatePage(lang);
+        updateClock();
+      });
+
+      $$(".lang-btn").forEach(item => item.classList.toggle("active", item.dataset.lang === currentLang));
+      renderTerminal(currentLang);
+      translatePage(currentLang);
+    }
+
+    function setupModal() {
+      document.body.addEventListener("click", event => {
+        const opener = event.target.closest("[data-preview]");
+        if (!opener) return;
+        openPreview(opener.dataset.preview);
+      });
+
+      $("#modalClose").addEventListener("click", closePreview);
+      $("#pdfModal").addEventListener("click", event => {
+        if (event.target.id === "pdfModal") closePreview();
+      });
+
+      window.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+          closePreview();
+          closeMenu();
+        }
+      });
+    }
+
+    function setupContact() {
+      $("#contactEmailText").textContent = contactEmail;
+      $("#contactEmailLink").href = `mailto:${contactEmail}`;
+
+      $("#contactForm").addEventListener("submit", event => {
+        event.preventDefault();
+        const form = new FormData(event.currentTarget);
+        const name = form.get("senderName") || "";
+        const email = form.get("senderEmail") || "";
+        const subject = form.get("subject") || "Contact depuis le portfolio";
+        const message = form.get("message") || "";
+        const nameLabel = { fr: "Nom", en: "Name", es: "Nombre" }[currentLang] || "Nom";
+        const body = [
+          message,
+          "",
+          name ? `${nameLabel} : ${name}` : "",
+          email ? `Email : ${email}` : ""
+        ].filter(Boolean).join("\n");
+
+        window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      });
+    }
+
+    renderStackShowcase();
+    renderTimeline();
+    renderCompetencies();
+    renderProjects();
+    renderDocumentGroups();
+    setupTheme();
+    setupDocuments();
+    setupNavigation();
+    setupClockAndLanguage();
+    setupModal();
+    setupContact();
+  </script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Veille IA 2026 - Agents et cybersécurité</title>
+  <style>
+    @page { size: A4; margin: 14mm; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: #152033;
+      background: #f4f7fb;
+      line-height: 1.52;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: #fff;
+      padding: 18mm;
+    }
+    .hero {
+      display: grid;
+      gap: 16px;
+      padding: 18px;
+      border-radius: 18px;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(45, 212, 191, .18), transparent),
+        linear-gradient(135deg, #0f172a, #172554 58%, #312e81);
+    }
+    .kicker {
+      display: inline-flex;
+      width: max-content;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px;
+      padding: 5px 9px;
+      color: #a7f3d0;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      margin-bottom: 0;
+      font-size: 34px;
+      line-height: 1.04;
+    }
+    h2 {
+      margin: 24px 0 10px;
+      font-size: 21px;
+      color: #0f766e;
+    }
+    h3 {
+      margin: 0 0 6px;
+      font-size: 15px;
+      color: #111827;
+    }
+    .hero p {
+      max-width: 680px;
+      margin-bottom: 0;
+      color: #dbeafe;
+    }
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .meta div, .card {
+      border: 1px solid #d8e2ef;
+      border-radius: 14px;
+      background: #fff;
+    }
+    .meta div {
+      padding: 10px;
+      color: #111827;
+      background: #f8fafc;
+      font-size: 12px;
+    }
+    .meta strong {
+      display: block;
+      color: #0f172a;
+      font-size: 13px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .card {
+      padding: 13px;
+      break-inside: avoid;
+    }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .tag {
+      border-radius: 999px;
+      padding: 4px 7px;
+      color: #0f172a;
+      background: #e6f6f2;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+    li { margin: 5px 0; }
+    .timeline {
+      display: grid;
+      gap: 10px;
+    }
+    .source {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 10px;
+      padding: 9px 0;
+      border-top: 1px solid #e5e7eb;
+      font-size: 12px;
+    }
+    .source strong { color: #0f766e; }
+    a { color: #2563eb; text-decoration: none; overflow-wrap: anywhere; }
+    .note {
+      margin-top: 16px;
+      padding: 12px;
+      border-left: 4px solid #0f766e;
+      border-radius: 10px;
+      background: #f0fdfa;
+      font-size: 13px;
+    }
+    .footer {
+      margin-top: 22px;
+      color: #64748b;
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <span class="kicker">Veille informatique - BTS SIO SISR</span>
+      <h1>IA 2026 : agents, outils utilisés et cybersécurité</h1>
+      <p>Problématique : comment les agents IA transforment-ils le support, l'administration système/réseau et la cybersécurité, tout en gardant une logique de contrôle humain et de protection des données ?</p>
+      <div class="meta">
+        <div><strong>Étudiant</strong>Théo André</div>
+        <div><strong>Formation</strong>BTS SIO option SISR</div>
+        <div><strong>Mise à jour</strong>4 mai 2026</div>
+      </div>
+    </section>
+
+    <h2>Méthode de veille</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Outils utilisés</h3>
+        <ul>
+          <li>Navigateur web et recherches ciblées sur des sources officielles.</li>
+          <li>Codex / ChatGPT pour organiser les notes, comparer les informations et rédiger la synthèse.</li>
+          <li>Export PDF local pour obtenir un document propre à présenter.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Critères de sélection</h3>
+        <ul>
+          <li>Actualité récente ou document de référence encore pertinent.</li>
+          <li>Lien avec SISR : support, réseau, systèmes, automatisation, sécurité.</li>
+          <li>Source identifiable : éditeur, organisme public ou documentation officielle.</li>
+        </ul>
+      </article>
+    </div>
+
+    <h2>Synthèse de l'actualité</h2>
+    <div class="timeline">
+      <article class="card">
+        <h3>1. Les agents IA ne se limitent plus à répondre : ils exécutent des tâches</h3>
+        <p>OpenAI présente Codex comme un agent de développement capable d'aider à construire, corriger, documenter et travailler sur plusieurs tâches en parallèle. Anthropic décrit aussi Claude Code comme un système agentique capable de lire un codebase, modifier des fichiers et lancer des tests.</p>
+        <div class="tag-row"><span class="tag">Codex</span><span class="tag">Claude Code</span><span class="tag">Automatisation</span></div>
+      </article>
+      <article class="card">
+        <h3>2. En entreprise, la priorité devient la gouvernance des agents</h3>
+        <p>Microsoft met en avant Copilot, Copilot Cowork et Agent 365 pour travailler dans les outils Microsoft 365 tout en gardant supervision, sécurité, identité et conformité. Google positionne Gemini Enterprise comme une plateforme d'agents reliée aux workflows et aux systèmes de l'entreprise.</p>
+        <div class="tag-row"><span class="tag">Copilot</span><span class="tag">Agent 365</span><span class="tag">Gemini Enterprise</span></div>
+      </article>
+      <article class="card">
+        <h3>3. Pour un profil SISR, l'IA est utile mais doit être encadrée</h3>
+        <p>L'ANSSI rappelle que l'IA crée trois sujets cyber : sécuriser les systèmes d'IA, utiliser l'IA pour la cybersécurité, et se défendre face à des attaquants qui exploitent aussi l'IA. La bonne approche reste basée sur les risques, les droits, les journaux et la validation humaine.</p>
+        <div class="tag-row"><span class="tag">ANSSI</span><span class="tag">Risques</span><span class="tag">Traçabilité</span></div>
+      </article>
+    </div>
+
+    <h2>Impact concret pour le SISR</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Support et administration</h3>
+        <ul>
+          <li>Aide à rédiger des procédures utilisateurs et techniques.</li>
+          <li>Diagnostic plus rapide à partir de messages d'erreur ou de journaux.</li>
+          <li>Génération de scripts, à relire et tester avant usage.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Cybersécurité</h3>
+        <ul>
+          <li>Tri d'alertes, résumé d'incidents, aide à la documentation.</li>
+          <li>Risque de fuite d'informations si des données sensibles sont envoyées sans contrôle.</li>
+          <li>Besoin de MFA, permissions minimales, segmentation et journalisation.</li>
+        </ul>
+      </article>
+    </div>
+
+    <h2>Ce que je retiens pour l'oral</h2>
+    <div class="note">
+      Les agents IA deviennent des assistants capables d'agir sur des fichiers, des applications et des workflows. Pour un technicien SISR, c'est une opportunité pour gagner du temps sur la documentation, le diagnostic et l'automatisation. Mais leur intégration doit rester maîtrisée : vérifier les résultats, limiter les droits, protéger les données et conserver des traces.
+    </div>
+
+    <h2>Sources utilisées</h2>
+    <div class="source"><strong>OpenAI</strong><a href="https://openai.com/codex/">https://openai.com/codex/</a></div>
+    <div class="source"><strong>Microsoft</strong><a href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/powering-frontier-transformation-with-copilot-and-agents/">https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/powering-frontier-transformation-with-copilot-and-agents/</a></div>
+    <div class="source"><strong>Google Cloud</strong><a href="https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise">https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise</a></div>
+    <div class="source"><strong>Anthropic</strong><a href="https://www.anthropic.com/product/claude-code">https://www.anthropic.com/product/claude-code</a></div>
+    <div class="source"><strong>ANSSI</strong><a href="https://cyber.gouv.fr/enjeux-technologiques/intelligence-artificielle/">https://cyber.gouv.fr/enjeux-technologiques/intelligence-artificielle/</a></div>
+
+    <p class="footer">Document généré pour le portfolio BTS SIO SISR de Théo André. Les informations sont synthétisées à partir de sources officielles consultées le 4 mai 2026.</p>
+  </main>
+</body>
+</html>
